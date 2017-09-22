@@ -44,13 +44,8 @@ var Boid = function () {
       vector = this.avoid(vector);
       vector.multiplyScalar(5);
       _acceleration.add(vector);
-    }/* else {
-						this.checkBounds();
-					}
-					*/
-    // if (Math.random() > 0.5) {
+    }
     this.flock(boids);
-    // }
     this.move();
   };
   this.flock = function (boids) {
@@ -78,7 +73,6 @@ var Boid = function () {
     if (this.position.z > _depth) this.position.z = - _depth;
     if (this.position.z < - _depth) this.position.z = _depth;
   };
-  //
   this.avoid = function (target) {
     var steer = new THREE.Vector3();
     steer.copy(this.position);
@@ -185,9 +179,6 @@ function init() {
     boid.position.x = 300;
     boid.position.y = 300;
     boid.position.z = 200;
-    // boid.position.x = Math.random() * 400 - 200;
-    // boid.position.y = Math.random() * 400 - 200;
-    // boid.position.z = Math.random() * 400 - 200;
     boid.velocity.x = Math.random() * 2 - 1;
     boid.velocity.y = Math.random() * 2 - 1;
     boid.velocity.z = Math.random() * 2 - 1;
@@ -202,11 +193,7 @@ function init() {
   renderer.setPixelRatio(window.devicePixelRatio);
   renderer.setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
   document.addEventListener('mousemove', onDocumentMouseMove, false);
-  // document.getElementById('container').appendChild(stats.dom);
   document.body.appendChild(renderer.domElement);
-  // stats = new Stats();
-  // document.getElementById('container').appendChild(stats.dom);
-  //
   window.addEventListener('resize', onWindowResize, false);
 }
 function onWindowResize() {
@@ -222,12 +209,9 @@ function onDocumentMouseMove(event) {
     boid.repulse(vector);
   }
 }
-//
 function animate() {
   requestAnimationFrame(animate);
-  // stats.begin();
   render();
-  // stats.end();
 }
 function render() {
   for (var i = 0, il = birds.length; i < il; i++) {
