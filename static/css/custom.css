@@ -3,7 +3,7 @@ h1 { text-align: center; font-size: 72px; font-weight: 200; -webkit-font-smoothi
 h2 { color: #1e836c; font-size: 48px; -webkit-font-smoothing: antialiased; }
 h3 { color: #45b29a; font-size: 24px; font-weight: 600; -webkit-font-smoothing: antialiased; }
 p { line-height: 1.6; -webkit-font-smoothing: antialiased; }
-a { color: #45b29a; text-decoration: none; -webkit-font-smoothing: antialiased; }
+a { color: #45b29a; outline: none; text-decoration: none; -webkit-font-smoothing: antialiased; }
 a:hover { color: #1e836c; }
 canvas { position: absolute; top: 0; left: 0; z-index: -1; opacity: .5; }
 /* .btn-primary { color: #fff; background-color: #45b29a; border-color: #45b29a; }
@@ -14,8 +14,7 @@ nav.navbar { -webkit-box-shadow: 0 1px 1px rgba(6,8,8,.1); box-shadow: 0 1px 1px
 nav.navbar .navbar-brand { height: 125px; padding: 25px; }
 nav.navbar .navbar-brand > img { height: 100%; }
 #main-nav .navbar-nav a.nav-item { color: #45b29a; }
-#main-nav .navbar-nav a.nav-item:hover,
-#main-nav .navbar-nav a.nav-item:focus { color: #21564b; }
+#main-nav .navbar-nav a.nav-item:hover { color: #21564b; }
 
 section.flex-container { display: flex; height: calc(100vh - 141px); height: -o-calc(100vh - 141px); height: -webkit-calc(100vh - 141px); height: -moz-calc(100vh - 141px); min-height: 554px; }
 section.flex-container .v-h-center { margin: auto; text-align: center; }
