@@ -1,5 +1,5 @@
-body { color: #525252; font-family: "Source Sans Pro", sans-serif; font-size: 19px; }
-h1 { text-align: center; font-size: 72px; font-weight: 200; -webkit-font-smoothing: antialiased; }
+body { color: #525252; font-family: 'Source Sans Pro', sans-serif; font-size: 19px; }
+h1 { font-size: 72px; font-weight: 200; -webkit-font-smoothing: antialiased; }
 h2 { color: #1e836c; font-size: 48px; -webkit-font-smoothing: antialiased; }
 h3 { color: #45b29a; font-size: 24px; font-weight: 600; -webkit-font-smoothing: antialiased; }
 p { line-height: 1.6; -webkit-font-smoothing: antialiased; }
@@ -13,10 +13,11 @@ canvas { position: absolute; top: 0; left: 0; z-index: -1; opacity: .5; }
 nav.navbar { -webkit-box-shadow: 0 1px 1px rgba(6,8,8,.1); box-shadow: 0 1px 1px rgba(6,8,8,.1); }
 nav.navbar .navbar-brand { height: 125px; padding: 25px; }
 nav.navbar .navbar-brand > img { height: 100%; }
-#main-nav .navbar-nav a.nav-item { color: #45b29a; }
-#main-nav .navbar-nav a.nav-item:hover { color: #21564b; }
+nav.navbar .navbar-nav .nav-item { color: #45b29a; }
+nav.navbar .navbar-nav .nav-item:hover { color: #21564b; }
 
 section.flex-container { display: flex; height: calc(100vh - 141px); height: -o-calc(100vh - 141px); height: -webkit-calc(100vh - 141px); height: -moz-calc(100vh - 141px); min-height: 554px; }
 section.flex-container .v-h-center { margin: auto; text-align: center; }
 
 section.banner p { color: #aeaeae; font-size: 28px; font-weight: 100; -webkit-font-smoothing: subpixel-antialiased; }
+section.about p { color: #aeaeae; font-size: 28px; font-weight: 100; -webkit-font-smoothing: subpixel-antialiased; }
