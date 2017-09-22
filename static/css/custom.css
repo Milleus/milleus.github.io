@@ -17,6 +17,7 @@ nav.navbar .navbar-brand > img { height: 100%; }
 #main-nav .navbar-nav a.nav-item:hover,
 #main-nav .navbar-nav a.nav-item:focus { color: #21564b; }
 
-section.banner { display: table; table-layout: fixed; height: calc(100vh - 141px); height: -o-calc(100vh - 141px); height: -webkit-calc(100vh - 141px); height: -moz-calc(100vh - 141px); min-height: 736px; margin: 0 0 0 0; width: 100%; text-align: center; }
-section.banner .vertical { display: table-cell; vertical-align: middle; width: 100%; }
-section.banner .vertical > p { color: #aeaeae; font-size: 28px; font-weight: 100; text-align: center; margin: 10px 0 20px; -webkit-font-smoothing: subpixel-antialiased; }
+section.flex-container { display: flex; height: calc(100vh - 141px); height: -o-calc(100vh - 141px); height: -webkit-calc(100vh - 141px); height: -moz-calc(100vh - 141px); min-height: 554px; }
+section.flex-container .v-h-center { margin: auto; text-align: center; }
+
+section.banner p { color: #aeaeae; font-size: 28px; font-weight: 100; -webkit-font-smoothing: subpixel-antialiased; }
