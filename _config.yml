@@ -1,2 +1,3 @@
-name: Milleus
+name: Dave Quah, Milleus
 markdown: kramdown
+permalink: /blog/:year/:month/:day/:title
