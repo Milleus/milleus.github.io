@@ -1,7 +1,7 @@
-body { color: #525252; font-family: 'Source Sans Pro', sans-serif; font-size: 19px; }
-h1 { font-size: 72px; font-weight: 200; -webkit-font-smoothing: antialiased; }
-h2 { color: #1e836c; font-size: 48px; -webkit-font-smoothing: antialiased; }
-h3 { color: #45b29a; font-size: 24px; font-weight: 600; -webkit-font-smoothing: antialiased; }
+html, body { color: #525252; font-family: 'Source Sans Pro', sans-serif; font-size: 19px; }
+h1 { font-size: 3.7rem; font-weight: 200; -webkit-font-smoothing: antialiased; }
+h2 { color: #1e836c; font-size: 2.52rem; -webkit-font-smoothing: antialiased; }
+h3 { color: #45b29a; font-size: 1.26rem; font-weight: 600; -webkit-font-smoothing: antialiased; }
 p { line-height: 1.6; -webkit-font-smoothing: antialiased; }
 a { color: #45b29a; outline: none; text-decoration: none; -webkit-font-smoothing: antialiased; }
 a:hover { color: #1e836c; }
@@ -21,3 +21,23 @@ section.flex-container .v-h-center { margin: auto; text-align: center; }
 
 section.banner p { color: #aeaeae; font-size: 28px; font-weight: 100; -webkit-font-smoothing: subpixel-antialiased; }
 section.about p { color: #aeaeae; font-size: 28px; font-weight: 100; -webkit-font-smoothing: subpixel-antialiased; }
+
+section.blog .row { margin-top: 2.5rem; margin-bottom: 2.5rem; border-radius: 0; border-color: transparent; box-shadow: 0 2px 7px rgba(0,0,0,.2); }
+section.blog .blog-wrapper { padding-top: 2.5rem; padding-bottom: 2.5rem; background-color: #fff; }
+
+section.post .row { margin-top: 2.5rem; margin-bottom: 2.5rem; border-radius: 0; border-color: transparent; box-shadow: 0 2px 7px rgba(0,0,0,.2); }
+section.post .post-wrapper { padding-top: 2.5rem; padding-bottom: 2.5rem; background-color: #fff; }
+section.post .post-content { line-height: 1.6; -webkit-font-smoothing: antialiased; }
+section.post .post-sidebar h3 { padding-top: 2.5rem; text-align: center; }
+
+
+@media (max-width: 575px) {
+  section.post .post-sidebar { display: none; }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  section.post .post-sidebar { display: none; }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {}
+@media (min-width: 992px) and (max-width: 1199px) {}
