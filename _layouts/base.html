@@ -6,28 +6,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Dave Quah - {{ page.title }}</title>
 
-  <link href="/static/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:100,200,400,600" rel="stylesheet">
+  <link href="/static/css/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <link href="/static/css/custom.css" rel="stylesheet" />
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container">
-      <a class="navbar-brand" href="/"><img src="/static/img/milleus.jpg" alt="Dave Quah" class="rounded-circle"></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false"
-        aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-
-      <div class="collapse navbar-collapse" id="main-nav">
-        <div class="navbar-nav">
-          <a class="nav-item nav-link" href="/">Home</a>
-          <a class="nav-item nav-link" href="/about/">About</a>
-          <a class="nav-item nav-link" href="/blog/">Blog</a>
-          <a class="nav-item nav-link disabled" href="#">Projects</a>
-        </div>
-      </div>
+  <nav id="menu">
+    <ul class="d-flex">
+      <li class="d-flex flex" id="home"><span>DAVE QUAH</span></li>
+      <li class="d-flex flex"></li>
+      <li class="d-flex flex"></li>
+      <li class="d-flex flex"></li>
+      <li class="d-flex flex" id="projects"><span>PROJECTS</span></li>
+      <li class="d-flex flex" id="about"><span>ABOUT</span></li>
+      <li class="d-flex flex" id="contact"><span>CONTACT</span></li>
+      <li class="d-flex flex" id="blog"><span>BLOG</span></li>
+    </ul>
+    <div class="t-wrap child-1">
+      <div class="tracker"></div>
     </div>
   </nav>
 
@@ -35,12 +32,12 @@
 
   <script src="/static/js/jquery-3.2.1.min.js"></script>
   <script src="/static/js/popper.min.js"></script>
-  <script src="/static/js/bootstrap.min.js"></script>
   <script src="/static/js/three.min.js"></script>
   <script src="/static/js/renderers/Projector.js"></script>
   <script src="/static/js/renderers/CanvasRenderer.js"></script>
   <script src="/static/obj/Bird.js"></script>
   <script src="/static/js/smlj.js"></script>
+  <script src="/static/js/custom.js"></script>
 </body>
 
 </html>

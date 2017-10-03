@@ -171,7 +171,7 @@ function init() {
   camera = new THREE.PerspectiveCamera(75, SCREEN_WIDTH / SCREEN_HEIGHT, 1, 10000);
   camera.position.z = 450;
   scene = new THREE.Scene();
-  scene.background = new THREE.Color(0xffffff);
+  scene.background = new THREE.Color(0x030303);
   birds = [];
   boids = [];
   for (var i = 0; i < 24; i++) {
