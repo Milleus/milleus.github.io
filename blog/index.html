@@ -2,13 +2,13 @@
 layout: base
 title: Blog Archive
 ---
-<section class="container-fluid blog">
-    <div class="container ">
-      <div class="row">
-        <div class="col blog-wrapper">
-          <h2>{{ page.title }}</h2>
-          <p>Yeah, I write shit sometimes..</p>
-          <hr>
+<section id="blog">
+  <div class="container">
+    <div class="row">
+      <div class="col s12">
+        <h3 class="header">{{ page.title }}</h3>
+        <p>Sometimes i write stuff..</p>
+        <div class="line"></div>
           <ul class="posts">
             {% for post in site.posts %}
               <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>

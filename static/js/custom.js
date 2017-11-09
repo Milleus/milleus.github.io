@@ -1,12 +1,11 @@
-$('nav#menu ul li').on('click', function() {
-  $('nav#menu ul li').removeClass('active');
-  $(this).addClass('active');
+  // Initialize collapse button
+  $(".button-collapse").sideNav();
+  // Initialize collapsible (uncomment the line below if you use the dropdown variation)
+  //$('.collapsible').collapsible();
 
-  const selectedChild = 'child-' + $('nav#menu ul li').index(this);
-  $('.t-wrap').removeClass('hild-4 child-5 child-6 child-7');
-  $('.t-wrap').addClass(selectedChild);
-
-  const activeId = $(this).attr('id');
-  $('.content-overlay').removeClass('show');
-  $('.content-overlay.' + activeId).addClass('show');
+$('#slide-out > li > a').on('click', function() {
+  const href = $(this).attr('href').replace(/[\/]+/g, '');
+  $('html, body').animate({
+    scrollTop: $(href).offset().top
+  }, 1000);
 });
