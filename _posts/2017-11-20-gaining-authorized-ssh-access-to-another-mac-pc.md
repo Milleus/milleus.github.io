@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Gaining authorized SSH access to another mac PC"
-date: 2017-09-04
+date: 2017-11-20
 ---
 
 One fine day at work, a co-worker left his laptop unlocked while going number one.
@@ -14,12 +14,12 @@ But first, let me introduce you to a girl known as Rebecca. Rebecca is the girl 
 
 You return to do your work only to find that something feels terribly wrong about your laptop. For some reason, it randomly launches Rick Roll on Google Chrome. It starts to annoy you, you goggle for solutions but to no avail. In frustration, you uninstall Google Chrome.. only to find that now it randomly launches Rick Roll on Mozilla Firefox.
 
-By the way, if you haven't figured out, Rebecca goes by another name called Complacency. I've also named my script after her so that we do not forget her.
+By the way, if you haven't figured out, Rebecca goes by another name called Complacency. I've also named my script after her so that we don't forget her.
 
 So how exactly does the script work? There are a couple of things that happen when the script is used.
 1. Injecting your rsa public key into the authorized_keys of the victim's mac PC
 2. Grabs the victim's hostname and IP address and sends it to an email address
 
-So with everything in place, all that's left to do is to SSH in and play around with some commands. For a more detailed explanation, [click here](https://github.com/Milleus/rebecca).
+So with everything in place, all that's left to do is to SSH in and play around with some commands. For a more detailed explanation, [click here](https://github.com/Milleus/rebecca){:target="_blank"}.
 
-I guess the key takeaway from this is to always be vigilant. There is just too much shit that someone can do to you especially if they have malicious intent. So remember, the next time you decide to go number one, don't give in to Rebecca. She is out there to fuck with you.
+I guess the key takeaway from this is to always be vigilant. There is just too much shit that someone can do to you especially if they have malicious intent. So remember, the next time you decide to go number one, don't give in to Rebecca. She is out there to f*ck with you.
