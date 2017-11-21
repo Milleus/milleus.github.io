@@ -8,10 +8,8 @@ footer { padding-left: 300px; }
 h1 { font-size: 3.7rem; font-weight: 200; -webkit-font-smoothing: antialiased; }
 h2 { font-size: 2.5rem; -webkit-font-smoothing: antialiased; }
 p { font-weight: 200; letter-spacing: 1px; margin: 0; }
-a { font-weight: 200; letter-spacing: 1px; margin: 0; outline: none; text-decoration: none; }
+a { color: #fff; font-weight: 200; letter-spacing: 1px; margin: 0; outline: none; text-decoration: none; }
 a:hover { color: #ffbd00; }
-
-hr {}
 
 section { padding: 50px 0; display: flex; align-items: center; }
 section .header { text-transform: uppercase; }
@@ -21,10 +19,11 @@ section .line { background-color: #ffbd00; height: 3px; width: 20px; margin: 10p
 .dark-side { background: #000; color: #fff; }
 
 /* navigation */
-#slide-out { background-color: #000; }
+#slide-out { background-color: #000; border-right: 1px solid #fff; }
 #slide-out .userView .name { font-weight: 200; letter-spacing: 3px; min-height: 20px; text-transform: uppercase; }
+#slide-out .userView .subtext { font-size: .75rem; font-weight: 200; letter-spacing: 3px; text-transform: uppercase; }
 #slide-out .divider { margin-left: 32px; margin-right: 32px; background-color: #ffbd00; }
-#slide-out li > a { color: #fff; cursor: pointer; font-size: .75rem; letter-spacing: 3px; margin: auto; opacity: .7; transition: opacity 300ms 0s ease; text-transform: uppercase; }
+#slide-out li > a { color: #fff; font-size: .75rem; letter-spacing: 3px; margin: auto; opacity: .7; transition: opacity 300ms 0s ease; text-transform: uppercase; }
 #slide-out li > a:hover { opacity: 1; }
 
 /* home */
@@ -33,14 +32,12 @@ section#home p.caption { color: #aeaeae; font-size: 28px; font-weight: 100; -web
 
 /* about */
 section#about { min-height: 500px; }
-/* div.divider { background-color: #ffbd00; height: 3px; margin: 0 32px; } */
 
 /* projects */
 section#projects { min-height: 500px; align-items: center; justify-content: center; flex-direction: column; }
 
 /* contact */
 section#contact { min-height: 500px; }
-
 
 /* responsive */
 @media only screen and (max-width : 992px) {
