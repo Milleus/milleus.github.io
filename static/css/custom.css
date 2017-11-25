@@ -13,8 +13,8 @@ a { font-weight: 200; letter-spacing: 1px; margin: 0; outline: none; text-decora
 section { padding: 50px 0; display: flex; align-items: center; }
 section .header { text-transform: uppercase; }
 section .sub-header { font-weight: 200; letter-spacing: 3px; min-height: 20px; text-transform: uppercase; margin-top: 1.46rem; }
-section .line { background-color: red; height: 3px; width: 20px; margin: 10px 0; }
-.dirty-text { color: red; }
+section .line { background-color: #ffbd00; height: 3px; width: 20px; margin: 10px 0; }
+.dirty-text { color: #ffbd00; }
 
 /* dark side */
 .dark-side { background: #000; color: #fff; }
@@ -23,13 +23,17 @@ section .line { background-color: red; height: 3px; width: 20px; margin: 10px 0;
 #slide-out { background-color: #000; border-right: 1px solid #fff; }
 #slide-out .userView .name { font-weight: 200; letter-spacing: 3px; min-height: 20px; text-transform: uppercase; }
 #slide-out .userView .subtext { font-size: .75rem; font-weight: 200; letter-spacing: 3px; text-transform: uppercase; }
-#slide-out .divider { margin-left: 32px; margin-right: 32px; background-color: red; }
+#slide-out .divider { margin-left: 32px; margin-right: 32px; background-color: #ffbd00; }
 #slide-out li > a { color: #fff; font-size: .75em; opacity: .7; letter-spacing: 3px; margin: auto; transition: all 300ms 0s ease; text-transform: uppercase; }
-#slide-out li > a:hover { color: red; opacity: 1; }
+#slide-out li > a:hover { color: #ffbd00; opacity: 1; }
 
 /* home */
 section#home { min-height: 640px; height: 100vh; align-items: center; justify-content: center; flex-direction: column; }
-section#home p.caption { color: #aeaeae; font-size: 28px; font-weight: 100; -webkit-font-smoothing: subpixel-antialiased; }
+section#home p.caption { font-size: 28px; font-weight: 100; -webkit-font-smoothing: subpixel-antialiased; }
+section#home #typity { position: relative; display: inline-block; background: transparent; background-size: 200% 100%; transition: background-position 0.4s; border-right: 2px solid black; animation: blink-caret .75s step-end infinite; }
+section#home #typity.highlighted { border-right: none; background-position:100% 0; background-image: -webkit-linear-gradient(right, rgba(0,0,0,0.2) 50%, transparent 50%); background-image: linear-gradient(to left, rgba(0,0,0,0.2) 50%, transparent 50%) }
+section#home #typity:after { content: ""; position: absolute; left: 0; bottom: 0; height: 5px; width: 100%; background-color: #ffbd00; z-index: -1; }
+@keyframes blink-caret { from, to { border-color: transparent } 50% { border-color: black; } }
 
 /* about */
 section#about { min-height: 500px; }
@@ -40,7 +44,7 @@ section#projects { min-height: 500px; align-items: center; justify-content: cent
 /* contact */
 section#contact { min-height: 500px; }
 section#contact a { color: #fff; transition: color 300ms 0s ease; }
-section#contact a:hover { color: red; }
+section#contact a:hover { color: #ffbd00; }
 
 /* blog & posts */
 section#blog p,
@@ -50,7 +54,7 @@ section#blog a,
 section#post a { color: #f4645f; font-weight: 400; letter-spacing: 0; text-decoration: underline; transition: color 300ms 0s ease; }
 
 section#blog a:hover,
-section#post a:hover { color: red; }
+section#post a:hover { color: #ffbd00; }
 
 section#post code { background-color: #f0f2f1; border-radius: 3px; color: #f4645f; font-family: "Operator Mono","Fira Code",Consolas,Monaco,"Andale Mono",monospace; font-size: 11px; line-height: 2; padding: 1px 5px; vertical-align: middle; }
 
