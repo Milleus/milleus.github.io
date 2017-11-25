@@ -6,7 +6,7 @@ date: 2017-11-21
 
 Recently, I've been feeling rather overwhelmed by work. I feel like there's too many things to do in too little time. I guess the main problem is that it's difficult to find time to really sit down and focus on your task at hand; people asking questions, random discussions, meetings, interviews and so on. This comic pretty much sums up how I feel..
 
-![alt text](/static/img/never-interrupt-a-programmer.jpg "Never interrupt a programmer")
+![alt text](/static/img/posts/never-interrupt-a-programmer.jpg "Never interrupt a programmer")
 
 I think I speak for my colleagues too, most of us are preoccupied with something else other than development work. Not saying that it's a bad thing, in fact, I think it's a good thing because it gives us more ways to contribute to our organisation, to make a bigger impact.
 
