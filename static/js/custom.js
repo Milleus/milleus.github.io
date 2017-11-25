@@ -1,10 +1,12 @@
 /* spells on global cooldown */
-const words = ['software engineer.', 'learner.', 'tech enthusiast.'];
+const words = ['software engineer.', 'learner.', 'tech enthusiast.', 'gamer.'];
 let wordIndex = 0;
 
 /* type and wipe */
 $(document).ready(function () {
-  startType(words[wordIndex], 0);
+  if(document.getElementById('typity') !== null ) {
+    startType(words[wordIndex], 0);
+  }
 });
 
 function startType(word, charIndex) {
