@@ -40,6 +40,7 @@ section#home #typity:after { content: ""; position: absolute; left: 0; bottom: 3
 /* about */
 /* projects */
 /* contact */
+section#contact .icon-link { text-decoration: none; }
 /* blog */
 
 /* posts */
