@@ -18,9 +18,15 @@
           <div class="nav-wrapper">
             <a href="#!" class="brand-logo"><i class="material-icons">cloud</i>Hoseh Bo?</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-              <li><a href="/testb/page-one">Page 1</a></li>
-              <li><a href="/testb/page-two">Page 2</a></li>
-              <li><a href="/testb/page-three">Page 3</a></li>
+              {% if page.type == 'A' %}
+                <li><a href="/testa/page-one">Page 1</a></li>
+                <li><a href="/testa/page-two">Page 2</a></li>
+                <li><a href="/testa/page-three">Page 3</a></li>
+              {% else %}
+                <li><a href="/testb/page-one">Page 1</a></li>
+                <li><a href="/testb/page-two">Page 2</a></li>
+                <li><a href="/testb/page-three">Page 3</a></li>
+              {% endif %}
             </ul>
           </div>
         </div>
@@ -36,9 +42,6 @@
     <script>
       $(document).ready(function() {
         $('select').material_select();
-        
-      });
-      $(document).ready(function(){
         // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
         $('.modal').modal();
         $('#modal1').modal('open');
