@@ -9,12 +9,38 @@ specific_js: project-pickle-rick
     <div class="row">
       <div class="col s12">
         <h2>{{ page.title }}</h2>
-        <p>What's the purpose of this? I don't know. Wanna see how you look like as a pickle?</p>
-        <label>Upload your face image: </label>
-        <input id="your-face" type="file">
-        <button id="flip">Flip pickle</button>
+        <p>Wanna be a pickle?</p>
       </div>
     </div>
+
+    <div class="row">
+      <form class="col s12" action="#">
+        <div class="row">
+          <div class="col s6">
+              <label for="your-face">Upload your picture:</label>
+              <div class="file-field input-field">
+                <div class="btn">
+                  <span>File</span>
+                  <input id="your-face" type="file">
+                </div>
+                <div class="file-path-wrapper">
+                  <input class="file-path validate" type="text">
+                </div>
+              </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col s6">
+            <label for="opacity">Select opacity of uploaded picture:</label>
+            <p class="range-field">
+              <input type="range" id="opacity" min="0" max="100" />
+            </p>
+          </div>
+        </div>
+      </form>
+    </div>
+
     <div class="row">
       <div class="col s12">
         <div class="canvas-wrapper">
