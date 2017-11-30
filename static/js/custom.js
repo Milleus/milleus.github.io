@@ -1,8 +1,8 @@
-/* spells on global cooldown */
+// spells on global cooldown
 const words = ['software engineer.', 'learner.', 'tech enthusiast.', 'gamer.'];
 let wordIndex = 0;
 
-/* type and wipe */
+// type and wipe
 $(document).ready(function () {
   if(document.getElementById('typity') !== null ) {
     startType(words[wordIndex], 0);
@@ -37,12 +37,12 @@ function startWipe() {
   }, 2000);
 }
 
-/* side navigation */
+// side navigation
 $(".button-collapse").sideNav();
 // Initialize collapsible (uncomment the line below if you use the dropdown variation)
 //$('.collapsible').collapsible();
 
-/* slide animation */
+// slide animation
 $('#slide-out > li > a').on('click', function () {
   const href = $(this).attr('href').replace(/[\/]+/g, '');
   $('html, body').animate({
