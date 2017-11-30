@@ -1,0 +1,27 @@
+---
+layout: base
+title: Pickle Rick Generator
+specific_css: project-pickle-rick
+specific_js: project-pickle-rick
+---
+<section id="pickle-rick">
+  <div class="container">
+    <div class="row">
+      <div class="col s12">
+        <h2>{{ page.title }}</h2>
+        <p>What's the purpose of this? I don't know. Wanna see how you look like as a pickle?</p>
+        <label>Upload your face image: </label>
+        <input id="your-face" type="file">
+        <button id="flip">Flip pickle</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s12">
+        <div class="canvas-wrapper">
+          <canvas id="layer1" width="605" height="800">Sorry. Your browser does not support HTML5 canvas element.</canvas>
+          <canvas id="layer2" width="605" height="800">Sorry. Your browser does not support HTML5 canvas element.</canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
