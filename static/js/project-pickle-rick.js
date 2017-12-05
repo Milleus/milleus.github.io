@@ -22,8 +22,10 @@ var angle = 0;
 // base pickle
 img1.src = '/static/img/project-pickle-rick.jpg';
 img1.onload = function () {
-  layer1.width = this.width;
-  layer1.height = this.height;
+  layer1.width = this.naturalWidth;
+  layer1.height = this.naturalHeight;
+  layer2.width = this.naturalWidth;
+  layer2.height = this.naturalHeight;
   ctx1.drawImage(this, 0, 0);
 };
 
