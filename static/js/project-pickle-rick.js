@@ -1,13 +1,14 @@
 // global
 var layer1 = $('#layer1')[0];
 var ctx1 = layer1.getContext('2d');
-var pickleImg = new Image();
+var img1 = new Image();
 
 var layer2 = $('#layer2')[0];
 var ctx2 = layer2.getContext('2d');
-var layer2width = 300;
-var layer2height = 300;
-var faceImg = null;
+var img2 = null;
+var img2width = 0;
+var img2height = 0;
+
 
 var canvasOffsetX = $("#layer2").offset().left;
 var canvasOffsetY = $("#layer2").offset().top;
@@ -15,9 +16,12 @@ var mouseDown = false;
 var mouseX = 0;
 var mouseY = 0;
 
+var opacity = 1;
+var angle = 0;
+
 // base pickle
-pickleImg.src = '/static/img/project-pickle-rick.jpg';
-pickleImg.onload = function () {
+img1.src = '/static/img/project-pickle-rick.jpg';
+img1.onload = function () {
   layer1.width = this.width;
   layer1.height = this.height;
   ctx1.drawImage(this, 0, 0);
@@ -27,7 +31,7 @@ pickleImg.onload = function () {
 $('#your-face').change(function () {
   var firstFile = this.files[0];
   if (firstFile) {
-    ctx2.clearRect(0, 0, layer2width, layer2height);
+    ctx2.clearRect(0, 0, layer2.width, layer2.height);
     renderImage(firstFile);
   }
 });
@@ -35,11 +39,13 @@ $('#your-face').change(function () {
 function renderImage(file) {
   var reader = new FileReader();
   reader.onload = function (event) {
-    faceImg = new Image();
-    faceImg.onload = function () {
-      ctx2.drawImage(this, 0, 0, layer2width, layer2height);
+    img2 = new Image();
+    img2.onload = function () {
+      img2width = this.naturalWidth;
+      img2height = this.naturalHeight;
+      ctx2.drawImage(this, 0, 0, img2width, img2height);
     }
-    faceImg.src = event.target.result;
+    img2.src = event.target.result;
   }
   reader.readAsDataURL(file);
 };
@@ -53,34 +59,49 @@ layer2.addEventListener('mousedown', handleMouseDown, false);
 
 function handleMouseDown(e) {
   mouseDown = true;
-}
+};
 
 function handleMouseOut(e) {
   mouseDown = false;
-}
+};
 
 function handleMouseMove(e) {
   if (mouseDown) {
     mouseX = e.pageX - canvasOffsetX;
     mouseY = e.pageY - canvasOffsetY;
-
-    ctx2.clearRect(0, 0, layer2.width, layer2.height);
-    ctx2.drawImage(faceImg, mouseX - layer2width / 2, mouseY - layer2height / 2, layer2width, layer2height);
+    redrawCanvas();
   }
-}
+};
 
 // opacity
-$('#opacity').on('change', function(e) {
+$('#opacity').on('change', function (e) {
   var inputValue = parseInt(this.value);
-  console.log('inputValue', inputValue);
-  if (inputValue >= 1 && inputValue <= 100 && Number.isInteger(inputValue) && faceImg != null) {
-
-    ctx2.clearRect(0, 0, layer2.width, layer2.height);
-    ctx2.globalAlpha = inputValue / 100;
-
-    var posX = mouseX == 0 ? 0 : mouseX - layer2width / 2;
-    var posY = mouseY == 0 ? 0 : mouseY - layer2width / 2;
-
-    ctx2.drawImage(faceImg, posX, posY, layer2width, layer2height);
+  if (inputValue >= 0 && inputValue <= 100 && Number.isInteger(inputValue)) {
+    opacity = inputValue / 100;
+    redrawCanvas();
   }
 });
+
+// rotation
+$('#angle').on('change', function (e) {
+  var inputValue = parseInt(this.value);
+  if (inputValue >= 0 && inputValue <= 360 && Number.isInteger(inputValue)) {
+    angle = inputValue * Math.PI / 180;
+    redrawCanvas();
+  }
+});
+
+// redraw
+function redrawCanvas() {
+  if (img2 != null) {
+    ctx2.clearRect(0, 0, layer2.width, layer2.height);
+    ctx2.save();
+
+    ctx2.translate(mouseX, mouseY);
+    ctx2.globalAlpha = opacity;
+    ctx2.rotate(angle);
+
+    ctx2.drawImage(img2, 0 - (img2width / 2), 0 - (img2height / 2), img2width, img2height);
+    ctx2.restore();
+  }
+}
