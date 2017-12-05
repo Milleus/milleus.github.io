@@ -20,7 +20,7 @@ var opacity = 1;
 var angle = 0;
 
 // base pickle
-img1.src = '/static/img/project-pickle-rick.jpg';
+img1.src = '/static/img/base-pickle.jpg';
 img1.onload = function () {
   layer1.width = this.naturalWidth;
   layer1.height = this.naturalHeight;
