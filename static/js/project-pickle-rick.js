@@ -1,14 +1,13 @@
 // global
 var layer1 = $('#layer1')[0];
 var ctx1 = layer1.getContext('2d');
-var img1 = new Image();
+var baseImg = new Image();
 
 var layer2 = $('#layer2')[0];
 var ctx2 = layer2.getContext('2d');
-var img2 = null;
-var img2width = 0;
-var img2height = 0;
-
+var uploadImg = null;
+var uploadImgWidth = 0;
+var uploadImgHeight = 0;
 
 var canvasOffsetX = $("#layer2").offset().left;
 var canvasOffsetY = $("#layer2").offset().top;
@@ -18,10 +17,12 @@ var mouseY = 0;
 
 var opacity = 1;
 var angle = 0;
+var xScale = 1;
+var yScale = 1;
 
 // base pickle
-img1.src = '/static/img/base-pickle.jpg';
-img1.onload = function () {
+baseImg.src = '/static/img/project-pickle-rick/pickle.jpg';
+baseImg.onload = function () {
   layer1.width = this.naturalWidth;
   layer1.height = this.naturalHeight;
   layer2.width = this.naturalWidth;
@@ -41,13 +42,13 @@ $('#your-face').change(function () {
 function renderImage(file) {
   var reader = new FileReader();
   reader.onload = function (event) {
-    img2 = new Image();
-    img2.onload = function () {
-      img2width = this.naturalWidth;
-      img2height = this.naturalHeight;
-      ctx2.drawImage(this, 0, 0, img2width, img2height);
+    uploadImg = new Image();
+    uploadImg.onload = function () {
+      uploadImgWidth = this.naturalWidth;
+      uploadImgHeight = this.naturalHeight;
+      ctx2.drawImage(this, 0, 0, uploadImgWidth, uploadImgHeight);
     }
-    img2.src = event.target.result;
+    uploadImg.src = event.target.result;
   }
   reader.readAsDataURL(file);
 };
@@ -93,17 +94,36 @@ $('#angle').on('change', function (e) {
   }
 });
 
+// x-scale
+$('#x-scale').on('change', function (e) {
+  var inputValue = parseInt(this.value);
+  if (inputValue >= 0 && inputValue <= 200 && Number.isInteger(inputValue)) {
+    xScale = inputValue / 100;
+    redrawCanvas();
+  }
+});
+
+// y-scale
+$('#y-scale').on('change', function (e) {
+  var inputValue = parseInt(this.value);
+  if (inputValue >= 0 && inputValue <= 200 && Number.isInteger(inputValue)) {
+    yScale = inputValue / 100;
+    redrawCanvas();
+  }
+});
+
 // redraw
 function redrawCanvas() {
-  if (img2 != null) {
+  if (uploadImg != null) {
     ctx2.clearRect(0, 0, layer2.width, layer2.height);
     ctx2.save();
 
     ctx2.translate(mouseX, mouseY);
     ctx2.globalAlpha = opacity;
     ctx2.rotate(angle);
+    ctx2.scale(xScale, yScale);
 
-    ctx2.drawImage(img2, 0 - (img2width / 2), 0 - (img2height / 2), img2width, img2height);
+    ctx2.drawImage(uploadImg, 0 - (uploadImgWidth / 2), 0 - (uploadImgHeight / 2), uploadImgWidth, uploadImgHeight);
     ctx2.restore();
   }
 }

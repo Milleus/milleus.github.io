@@ -1,7 +1,6 @@
-/* pickle rick!!! */
+/* pickle rick!!! */  
 section#pickle-rick .canvas-wrapper { position: relative; }
-
-section#pickle-rick canvas { position: absolute; top: 0; left: 0; }
-section#pickle-rick canvas#layer1 { border: 1px solid black; z-index: 1; }
+section#pickle-rick canvas { position: absolute; top: 0; left: 0; border: 1px solid black; }
+section#pickle-rick canvas#layer1 { z-index: 1; }
 section#pickle-rick canvas#layer2 { z-index: 2; }
 

@@ -17,33 +17,48 @@ specific_js: project-pickle-rick
       <form class="col s12" action="#">
         <div class="row">
           <div class="col s6">
-              <label for="your-face">Upload your picture:</label>
-              <div class="file-field input-field">
-                <div class="btn">
-                  <span>File</span>
-                  <input id="your-face" type="file">
-                </div>
-                <div class="file-path-wrapper">
-                  <input class="file-path validate" type="text">
-                </div>
+            <label for="your-face">Upload your picture:</label>
+            <div class="file-field input-field">
+              <div class="btn">
+                <span>File</span>
+                <input id="your-face" type="file">
               </div>
+              <div class="file-path-wrapper">
+                <input class="file-path validate" type="text">
+              </div>
+            </div>
           </div>
         </div>
 
         <div class="row">
           <div class="col s6">
-            <label for="opacity">Select opacity of uploaded picture:</label>
+            <label for="opacity">Adjust opacity (percentage):</label>
             <p class="range-field">
-              <input type="range" id="opacity" min="0" max="100" />
+              <input type="range" id="opacity" min="0" max="100" value="100" />
             </p>
           </div>
         </div>
 
         <div class="row">
           <div class="col s6">
-            <label for="angle">Select rotation angle of uploaded picture:</label>
+            <label for="angle">Adjust rotation (degree):</label>
             <p class="range-field">
-              <input type="range" id="angle" min="0" max="360" />
+              <input type="range" id="angle" min="0" max="360" value="0" />
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col s3">
+            <label for="x-scale">Adjust X-scale (percentage):</label>
+            <p class="range-field">
+              <input type="range" id="x-scale" min="0" max="200" value="100" />
+            </p>
+          </div>
+          <div class="col s3">
+            <label for="y-scale">Adjust Y-scale (percentage):</label>
+            <p class="range-field">
+              <input type="range" id="y-scale" min="0" max="200" value="100" />
             </p>
           </div>
         </div>
