@@ -157,7 +157,7 @@ function handleMouseOut(e) {
 };
 
 function handleMouseMove(e) {
-  if (mouseDown) {
+  if (mouseDown && selectedId != null) {
     layers[selectedId].mouseX = e.pageX - canvasOffsetX;
     layers[selectedId].mouseY = e.pageY - canvasOffsetY;
     redrawCanvas();
