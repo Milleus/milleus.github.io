@@ -129,6 +129,8 @@ var canvas = $('#canvas')[0];
 var context = canvas.getContext('2d');
 var canvasOffsetX = $("#canvas").offset().left;
 var canvasOffsetY = $("#canvas").offset().top;
+var canvasMouseX = 0;
+var canvasMouseY = 0;
 
 var layers = new Array();
 var selectedId = null;
@@ -158,8 +160,8 @@ function handleMouseOut(e) {
 
 function handleMouseMove(e) {
   if (mouseDown && selectedId != null) {
-    layers[selectedId].mouseX = e.pageX - canvasOffsetX;
-    layers[selectedId].mouseY = e.pageY - canvasOffsetY;
+    canvasMouseX = e.pageX - canvasOffsetX;
+    canvasMouseY = e.pageY - canvasOffsetY;
     redrawCanvas();
   }
 };
@@ -169,10 +171,10 @@ function redrawCanvas() {
   for (i in layers) {
     context.save();
 
-    var layerMouseX = layers[i].mouseX == 0 ? layers[i].canvas.width / 2 : layers[i].mouseX;
-    var layerMouseY = layers[i].mouseY == 0 ? layers[i].canvas.height / 2 : layers[i].mouseY;
+    var posX = canvasMouseX == 0 ? layers[i].canvas.width / 2 : canvasMouseX;
+    var posY = canvasMouseY == 0 ? layers[i].canvas.height / 2 : canvasMouseY;
 
-    context.translate(layerMouseX, layerMouseY);
+    context.translate(posX, posY);
     context.globalAlpha = layers[i].opacity;
     context.rotate(layers[i].angle * Math.PI / 180);
     context.scale(layers[i].scaleX, layers[i].scaleY);
@@ -190,8 +192,6 @@ function Layer(img, title) {
   this.title = title;
   this.opacity = 1;
   this.angle = 0;
-  this.mouseX = 0;
-  this.mouseY = 0;
   this.scaleX = 1;
   this.scaleY = 1;
 
