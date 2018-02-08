@@ -44,9 +44,11 @@ $(".button-collapse").sideNav();
 //$('.collapsible').collapsible();
 
 // slide animation
-$('#slide-out > li > a').on('click', function () {
-  const href = $(this).attr('href').replace(/[\/]+/g, '');
-  $('html, body').animate({
-    scrollTop: $(href).offset().top
-  }, 1000);
+$('#slide-out > li > a[href*="#"]').on('click', function () {
+  if (location.pathname == '/') {
+    const href = $(this).attr('href').replace(/[\/]+/g, '');
+    $('html, body').animate({
+      scrollTop: $(href).offset().top
+    }, 1000);
+  }
 });
