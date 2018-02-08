@@ -1,39 +1,40 @@
 // spells on global cooldown
 const words = ['software engineer.', 'learner.', 'tech enthusiast.', 'gamer.'];
-let wordIndex = 0;
+let idx = 0;
+let str = '';
 
 // type and wipe
-$(document).ready(function () {
-  if(document.getElementById('typity') !== null ) {
-    startType(words[wordIndex], 0);
-  }
-});
+if ($('#typity').length != 0) {
+  startType(words[idx], 0);
+}
 
 function startType(word, charIndex) {
   if (charIndex < word.length) {
-    document.getElementById('typity').innerHTML += word.charAt(charIndex);
+    str += word.charAt(charIndex);
+    $('#typity').html(str);
     charIndex++;
     setTimeout(function () {
       startType(word, charIndex);
     }, 50);
   } else {
     startWipe();
+    str = '';
   }
 }
 
 function startWipe() {
-  wordIndex = wordIndex < words.length - 1 ? wordIndex + 1 : 0;
+  idx = idx < words.length - 1 ? idx + 1 : 0;
 
   setTimeout(function () {
-    $('mark').addClass('highlighted')
+    $('#typity').addClass('highlighted')
   }, 1000);
 
   setTimeout(function () {
-    $('mark').removeClass('highlighted').text('');
+    $('#typity').removeClass('highlighted').text('');
   }, 2000);
 
   setTimeout(function () {
-    startType(words[wordIndex], 0);
+    startType(words[idx], 0);
   }, 2000);
 }
 
