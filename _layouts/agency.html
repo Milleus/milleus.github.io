@@ -1,49 +1,46 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <script src="//assets.adobedtm.com/a63ef04a8a06d4763abe9b28a8d967e7e749d199/satelliteLib-dd6372f52cc88df092abff8b96d8f6efaea48504-staging.js"></script>
+    <link rel="shortcut icon" href="/static/img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/static/img/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:100,200,400,600" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="/static/css/materialize.min.css" media="screen,projection" />
 
-<head>
-  <script src="//assets.adobedtm.com/a63ef04a8a06d4763abe9b28a8d967e7e749d199/satelliteLib-dd6372f52cc88df092abff8b96d8f6efaea48504-staging.js"></script>
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:100,200,400,600" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link type="text/css" rel="stylesheet" href="/static/css/materialize.min.css" media="screen,projection" />
-  <style>
-  </style>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agency - {{ page.title }}</title>
+  </head>
 
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Agency - {{ page.title }}</title>
-</head>
-
-<body>
-  <header>
-    <nav>
-      <div class="container">
-        <div class="nav-wrapper">
-          <a href="/agency/" class="brand-logo">
-            <i class="material-icons">cloud</i>Hoseh Bo?</a>
-          <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="/agency/">Home</a></li>
-            <li><a href="/agency/info">Info</a></li>
-            <li><a href="/agency/page-one">E-service</a></li>
-          </ul>
+  <body>
+    <header>
+      <nav>
+        <div class="container">
+          <div class="nav-wrapper">
+            <a href="/agency/" class="brand-logo">
+              <i class="material-icons">cloud</i>Hoseh Bo?</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+              <li><a href="/agency/">Home</a></li>
+              <li><a href="/agency/info">Info</a></li>
+              <li><a href="/agency/page-one">E-service</a></li>
+            </ul>
+          </div>
         </div>
-      </div>
-    </nav>
-  </header>
+      </nav>
+    </header>
 
-  <main>
-    {{ content }}
-  </main>
+    <main>
+      {{ content }}
+    </main>
 
-  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-  <script type="text/javascript" src="/static/js/materialize.min.js"></script>
-  <script>
-    $(document).ready(function () {
-      $('select').material_select();
-    });
-  </script>
-
-  <script type="text/javascript">_satellite.pageBottom();</script>
-</body>
-
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="/static/js/materialize.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $('select').material_select();
+      });
+    </script>
+    <script type="text/javascript">_satellite.pageBottom();</script>
+  </body>
 </html>
