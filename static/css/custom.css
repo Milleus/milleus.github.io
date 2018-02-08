@@ -6,6 +6,7 @@ main,
 footer { padding-left: 300px; }
 h1 { font-size: 3.7rem; font-weight: 200; -webkit-font-smoothing: antialiased; }
 h2 { font-size: 2.5rem; -webkit-font-smoothing: antialiased; }
+h3 { font-size: 2rem; -webkit-font-smoothing: antialiased; }
 a { color: #ffbd00; text-decoration: underline; transition: color 300ms 0s ease; }
 a:hover { color: #38300e; }
 
