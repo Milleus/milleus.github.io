@@ -11,4 +11,5 @@ section#loc-wrapper input:focus { border-bottom-color: #ee6e73; box-shadow: 0 1p
 section#map-wrapper .row { height: 100%; margin: 0; min-height: 640px; }
 section#map-wrapper .row .col { height: 100%; padding: 0; }
 section#map-wrapper .row .sidebar { display: flex; flex-direction: column; justify-content: space-between; padding: 2rem; border-right: 1px solid #eee; }
+section#map-wrapper .row .dest-photo { width: 100%; }
 section#map-wrapper #map { height: 100%; width: 100%; }
