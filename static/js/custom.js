@@ -8,13 +8,13 @@ if ($('#typity').length != 0) {
   startType(words[idx], 0);
 }
 
-function startType(word, charIndex) {
-  if (charIndex < word.length) {
-    str += word.charAt(charIndex);
+function startType(word, charIdx) {
+  if (charIdx < word.length) {
+    str += word.charAt(charIdx);
     $('#typity').html(str);
-    charIndex++;
+    charIdx++;
     setTimeout(function () {
-      startType(word, charIndex);
+      startType(word, charIdx);
     }, 50);
   } else {
     startWipe();
