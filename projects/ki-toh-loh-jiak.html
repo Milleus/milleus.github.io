@@ -2,30 +2,23 @@
 layout: blank
 title: Ki Toh Loh Jiak
 ---
-<section id="loc-wrapper" class="page active">
-  <div class="row">
-    <h1>Where are you at?</h1>
-    <input type="text" id="loc-input" placeholder="Enter your location" autocomplete="on">
-  </div>
-</section>
-
-<section id="map-wrapper" class="page">
-  <div class="row">
-    <div class="col s12 m4 sidebar">
-      <div class="dest-details">
-        <h4>How about <span id="dest-name"></span></h4>
-        <h5 id="dest-address"></h5>
-        <img id="dest-photo" src="">
-        <p>Rating: <span id="dest-rating"></span></p>
-        <p>Hours: <span id="dest-hours"></span></p>
-      </div>
-      <div class="btn-group">
-        <p><a class="waves-effect waves-light btn" onClick="redrawRouteAndPopulate()"><i class="material-icons left">track_changes</i>Find me another place</a></p>
-        <p><a class="waves-effect waves-light btn" onClick="scrollToElement('loc-wrapper')"><i class="material-icons left">arrow_upward</i>Change my location</a></p>
-      </div>
+<section id="ki-toh-loh-jiak">
+  <div class="top-card">
+    <div class="title">Where are you at?</div>
+    <div class="loc-wrapper">
+      <input type="text" id="loc-input" placeholder="Enter your location" autocomplete="on">
     </div>
-    <div class="col s12 m8">
-      <div id="map"></div>
+  </div>
+  <div id="map"></div>
+
+  <div class="bottom-card">
+    <img id="dest-photo" src="">
+    <div class="dest-details">
+      <div id="dest-name" class="title"></div>
+      <div id="dest-address"></div>
+      <div id="dest-rating"></div>
+      <div id="dest-hours"></div>
+      <a class="waves-effect waves-light btn" onClick="redrawRouteAndPopulate()"><i class="material-icons left">track_changes</i>Find me another place</a>
     </div>
   </div>
 </section>

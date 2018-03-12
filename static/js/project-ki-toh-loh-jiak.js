@@ -24,7 +24,6 @@ function initMap() {
 
   let locInput = document.getElementById('loc-input');
   let autocomplete = new google.maps.places.Autocomplete(locInput);
-  autocomplete.setComponentRestrictions({ 'country': 'sg' });
   autocomplete.addListener('place_changed', function () {
     origin = autocomplete.getPlace();
     if (!origin.geometry) {
@@ -34,12 +33,10 @@ function initMap() {
       return;
     }
 
-    scrollToElement('map-wrapper');
-
     // Search for nearby restaurants based on location entered
     const searchRequest = {
       location: { lat: origin.geometry.location.lat(), lng: origin.geometry.location.lng() },
-      radius: '500',
+      radius: '750',
       type: ['restaurant']
     }
 
@@ -48,6 +45,7 @@ function initMap() {
       if (status == google.maps.places.PlacesServiceStatus.OK) {
         resultsArray = response;
         redrawRouteAndPopulate();
+        document.querySelector('.bottom-card').classList.add('show');
       }
     });
   });
@@ -56,13 +54,11 @@ function initMap() {
 function redrawRouteAndPopulate() {
   destination = randomizeDestination();
   calculateAndDisplayRoute(directionsService, directionsDisplay);
-  $('#dest-name').text(destination.name);
-  if (destination.photos) {
-    $('#dest-photo').attr('src', destination.photos[0].getUrl({ 'maxWidth': 250, 'maxHeight': 250 }));
-  }
-  $('#dest-rating').text(destination.rating);
-  $('#dest-address').text(destination.vicinity);
-  $('#dest-hours').text(destination.opening_hours ? 'Open' : 'Closed');
+  document.getElementById('dest-photo').src = destination.photos ? destination.photos[0].getUrl({ 'maxWidth': 250, 'maxHeight': 250 }) : '';
+  document.getElementById('dest-name').innerHTML = destination.name;
+  document.getElementById('dest-address').innerHTML = destination.vicinity;
+  document.getElementById('dest-rating').innerHTML = 'Rating: ' + destination.rating;
+  document.getElementById('dest-hours').innerHTML = destination.opening_hours ? 'Hours: Open' : 'Hours: Closed';
 }
 
 // Randomly pick and return a location object from resultsArray
@@ -85,23 +81,3 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
     }
   });
 }
-
-function scrollToElement(elementId) {
-  $('.page').removeClass('active');
-  $('#' + elementId).addClass('active');
-  $('html, body').stop().animate({
-    scrollTop: $('#' + elementId).offset().top
-  }, 500);
-}
-
-$(document).ready(function(){
-  window.onbeforeunload = function () {
-    window.scrollTo(0, 0);
-  }
-});
-
-$(window).resize(function () {
-  $('html, body').stop().animate({
-    scrollTop: $('.page.active').offset().top
-  }, 10);
-});
