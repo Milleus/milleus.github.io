@@ -13,7 +13,7 @@ a:hover { color: #400101; }
 section { align-items: center; display: flex; padding: 50px 0; }
 section .header { text-transform: uppercase; }
 section .sub-header { min-height: 20px; text-transform: uppercase; }
-section .line { background-color: red; height: 3px; width: 20px; margin: 10px 0; }
+section .line { background-color: red; height: 3px; margin: 10px 0; width: 20px; }
 .dirty-text { color: red; }
 
 /* dark side */
@@ -31,25 +31,24 @@ section .line { background-color: red; height: 3px; width: 20px; margin: 10px 0;
 #slide-out li > a { color: #f2f2f2; text-decoration: none; }
 
 /* home */
-section#home { height: 100vh; align-items: center; justify-content: center; flex-direction: column; }
-section#home p.caption { display: flex; font-size: 28px; font-weight: 200; margin: 0; -webkit-font-smoothing: subpixel-antialiased; }
-section#home #typity { position: relative; background: transparent; background-size: 200% 100%; transition: background-position 0.4s; border-right: 2px solid black; animation: blink-caret .75s step-end infinite; }
-section#home #typity.highlighted { border-right: none; background-position:100% 0; background-image: -webkit-linear-gradient(right, rgba(0,0,0,0.2) 50%, transparent 50%); background-image: linear-gradient(to left, rgba(0,0,0,0.2) 50%, transparent 50%) }
-section#home #typity:after { content: ""; position: absolute; left: 0; bottom: 3px; height: 3px; width: 100%; background-color: red; z-index: -1; }
+#home { align-items: center; flex-direction: column; justify-content: center; height: 100vh; min-height: 400px; }
+#home .caption { font-size: 28px; font-weight: 200; display: flex; margin: 0; -webkit-font-smoothing: subpixel-antialiased; }
+#home #typity { animation: blink-caret .75s step-end infinite; background: transparent; background-size: 200% 100%; border-right: 2px solid black; position: relative; transition: background-position 0.4s; }
+#home #typity.highlighted { background-image: -webkit-linear-gradient(right, rgba(0,0,0,0.2) 50%, transparent 50%); background-image: linear-gradient(to left, rgba(0,0,0,0.2) 50%, transparent 50%); background-position: 100% 0; border-right: none; }
+#home #typity:after { background-color: red; bottom: 3px; content: ""; height: 3px; left: 0; position: absolute; width: 100%;  }
 @keyframes blink-caret { from, to { border-color: transparent } 50% { border-color: black; } }
 
 /* about */
 /* projects */
 /* contact */
-section#contact .icon-link { text-decoration: none; }
+#contact .icon-link { text-decoration: none; }
 /* blog */
 
 /* posts */
-section#post code { background-color: #400101; border-radius: 3px; color: red; font-family: "Operator Mono","Fira Code",Consolas,Monaco,"Andale Mono",monospace; font-size: 10px; line-height: 2; padding: 1px 5px; vertical-align: middle; }
+#post code { background-color: #400101; border-radius: 3px; color: red; font-family: "Operator Mono","Fira Code",Consolas,Monaco,"Andale Mono",monospace; font-size: 10px; line-height: 2; padding: 1px 5px; vertical-align: middle; }
 
 /* responsive */
 @media only screen and (max-width : 992px) {
-  header, main, footer {
-    padding-left: 0;
-  }
+  header, main, footer { padding-left: 0; }
+  #home { height: calc(100vh - 62px); }
 }
