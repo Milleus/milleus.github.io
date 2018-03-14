@@ -1,7 +1,7 @@
 let map;
 let origin;
 let destination;
-let resultsArray;
+let placesArray;
 let directionsService;
 let directionsDisplay;
 
@@ -43,7 +43,7 @@ function initMap() {
     let service = new google.maps.places.PlacesService(map);
     service.nearbySearch(searchRequest, function (response, status) {
       if (status == google.maps.places.PlacesServiceStatus.OK) {
-        resultsArray = response;
+        placesArray = response;
         redrawRouteAndPopulate();
         document.querySelector('.bottom-card').classList.add('show');
       }
@@ -61,12 +61,12 @@ function redrawRouteAndPopulate() {
   document.getElementById('dest-hours').innerHTML = destination.opening_hours ? 'Hours: Open' : 'Hours: Closed';
 }
 
-// Randomly pick and return a location object from resultsArray
+// Randomly pick and return a destination object from placesArray
 function randomizeDestination() {
-  return resultsArray[Math.floor(Math.random() * resultsArray.length)];
+  return placesArray[Math.floor(Math.random() * placesArray.length)];
 }
 
-// Draw route from origin to location on map
+// Draw route from origin to destination on map
 function calculateAndDisplayRoute(directionsService, directionsDisplay) {
   directionsService.route({
     origin: origin.geometry.location,
