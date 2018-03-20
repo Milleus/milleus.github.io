@@ -8,15 +8,9 @@
     <link rel="stylesheet" href="/static/css/materialize.min.css" media="screen,projection"/>
     <link rel="stylesheet" href="/static/css/fontello.css" media="screen,projection"/>
     <link rel="stylesheet" href="/static/css/custom.css" media="screen,projection"/>
-    {% if page.specific_css %}
-      {% for css_file in page.specific_css %}
-      <link rel="stylesheet" href="/static/css/{{css_file}}.css" media="screen,projection"/>
-      {% endfor %}
-    {% endif %}
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Dave Quah - {{ page.title }}</title>
-    <script src="/static/js/apppulse-web.js"></script>
   </head>
 
   <body>
@@ -31,10 +25,5 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="/static/js/materialize.min.js"></script>
     <script src="/static/js/custom.js"></script>
-    {% if page.specific_js %}
-      {% for js_file in page.specific_js %}
-        <script src="/static/js/{{js_file}}.js"></script>
-      {% endfor %}
-    {% endif %}
   </body>
 </html>
