@@ -3,7 +3,7 @@ const words = ['software engineer.', 'learner.', 'tech enthusiast.', 'gamer.'];
 let idx = 0;
 let str = '';
 
-// type and wipe
+// type/wipe
 if ($('#typity').length != 0) {
   startType(words[idx], 0);
 }
@@ -43,10 +43,11 @@ $(".button-collapse").sideNav({
   closeOnClick: true,
   draggable: true
 });
+
 // Initialize collapsible (uncomment the line below if you use the dropdown variation)
 //$('.collapsible').collapsible();
 
-// slide animation
+// anchor scroll
 $('#slide-out > li > a[href*="#"]').on('click', function () {
   if (location.pathname == '/') {
     const href = $(this).attr('href').replace(/[\/]+/g, '');

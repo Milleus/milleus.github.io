@@ -7,7 +7,7 @@ footer { padding-left: 300px; }
 h1 { font-size: 3.7rem; font-weight: 200; -webkit-font-smoothing: antialiased; }
 h2 { font-size: 2.5rem; -webkit-font-smoothing: antialiased; }
 h3 { font-size: 2rem; -webkit-font-smoothing: antialiased; }
-a { color: red; text-decoration: underline; transition: color 300ms 0s ease; }
+a { color: red; text-decoration: underline; transition: all .3s; }
 a:hover { color: #400101; }
 
 section { align-items: center; display: flex; padding: 50px 0; }
@@ -33,7 +33,7 @@ section .line { background-color: red; height: 3px; margin: 10px 0; width: 20px;
 /* home */
 #home { align-items: center; flex-direction: column; justify-content: center; height: 100vh; min-height: 400px; }
 #home .caption { font-size: 28px; font-weight: 200; display: flex; margin: 0; -webkit-font-smoothing: subpixel-antialiased; }
-#home #typity { animation: blink-caret .75s step-end infinite; background: transparent; background-size: 200% 100%; border-right: 2px solid black; position: relative; transition: background-position 0.4s; }
+#home #typity { animation: blink-caret .75s step-end infinite; background: transparent; background-size: 200% 100%; border-right: 2px solid black; position: relative; transition: background-position .4s; }
 #home #typity.highlighted { background-image: -webkit-linear-gradient(right, rgba(0,0,0,0.2) 50%, transparent 50%); background-image: linear-gradient(to left, rgba(0,0,0,0.2) 50%, transparent 50%); background-position: 100% 0; border-right: none; }
 #home #typity:after { background-color: red; bottom: 3px; content: ""; height: 3px; left: 0; position: absolute; width: 100%;  }
 @keyframes blink-caret { from, to { border-color: transparent } 50% { border-color: black; } }
