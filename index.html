@@ -43,78 +43,33 @@ title: Home
       </div>
     </div>
     <div class="row">
+      <!-- TESSARA -->
+      {% capture tessara %}
+      <p>Tessara consolidates feedback from Telegram and stores in Google Sheets. It automates the painful process of manual feedback consolidation.</p>
+      <p>Tessara utilizes Google Apps Script for wep app hosting and Google CacheService for session management.</p>
+      {% endcapture %}
+      {% include project-card.html src="/static/img/project-tessara.gif" title="Tessara" href="https://github.com/Milleus/tessara" href-name="github.com/Milleus/tessara" description=tessara %}
+
       <!-- MELISSA -->
-      <div class="col m6">
-        <div class="card">
-          <div class="card-image waves-effect waves-block waves-light">
-            <img class="activator" src="/static/img/project-melissa.png">
-          </div>
-          <div class="card-content">
-            <span class="card-title activator grey-text text-darken-4">Melissa
-              <i class="material-icons right">more_vert</i>
-            </span>
-            <p>
-              <a href="/projects/melissa" target="_blank">milleus.github.io/projects/melissa</a>
-            </p>
-          </div>
-          <div class="card-reveal">
-            <span class="card-title grey-text text-darken-4">Melissa
-              <i class="material-icons right">close</i>
-            </span>
-            <p>Melissa recommends a nearby place to eat based on location.</p>
-            <p>There is no backend as this purely utilizes Google Maps API.</p>
-          </div>
-        </div>
-      </div>
-  
+      {% capture melissa %}
+      <p>Melissa recommends a nearby place to eat based on location. It aims to solve the daily problem of deciding where to eat.</p>
+      <p>Melissa purely utilizes Google Maps API.</p>
+      {% endcapture %}
+      {% include project-card.html src="/static/img/project-melissa.png" title="Melissa" href="/projects/melissa" href-name="milleus.github.io/projects/melissa" description=melissa %}
+
       <!-- CALORIE CALCULATOR -->
-      <div class="col m6">
-        <div class="card">
-          <div class="card-image waves-effect waves-block waves-light">
-            <img class="activator" src="/static/img/project-calorie-calculator.png">
-          </div>
-          <div class="card-content">
-            <span class="card-title activator grey-text text-darken-4">Calorie Calculator
-              <i class="material-icons right">more_vert</i>
-            </span>
-            <p>
-              <a href="http://calculator.yolofood.com.sg/" target="_blank">calculator.yolofood.com.sg</a>
-            </p>
-          </div>
-          <div class="card-reveal">
-            <span class="card-title grey-text text-darken-4">Calorie Calculator
-              <i class="material-icons right">close</i>
-            </span>
-            <p>A calorie calculator that recommends target meal plans based on user information such as age, height, weight,
-              gender and activity level.</p>
-            <p>This was built with Laravel framework.</p>
-          </div>
-        </div>
-      </div>
+      {% capture calculator %}
+      <p>A calorie calculator that recommends target meal plans based on user information such as age, height, weight, gender and activity level. It aims to help users lose weight through weekly planned meals.</p>
+      <p>This was built with Laravel framework.</p>
+      {% endcapture %}
+      {% include project-card.html src="/static/img/project-calorie-calculator.png" title="Calorie Calc" href="http://calculator.yolofood.com.sg/" href-name="calculator.yolofood.com.sg" description=calculator %}
+
       <!-- YOLO FOOD -->
-      <div class="col m6">
-        <div class="card">
-          <div class="card-image waves-effect waves-block waves-light">
-            <img class="activator" src="/static/img/project-yolofood.png">
-          </div>
-          <div class="card-content">
-            <span class="card-title activator grey-text text-darken-4">YOLO FOOD
-              <i class="material-icons right">more_vert</i>
-            </span>
-            <p>
-              <a href="http://yolofood.com.sg/" target="_blank">yolofood.com.sg</a>
-            </p>
-          </div>
-          <div class="card-reveal">
-            <span class="card-title grey-text text-darken-4">YOLO FOOD
-              <i class="material-icons right">close</i>
-            </span>
-            <p>A simple content management website for a restaurant that believes in serving healthy food that tastes good.</p>
-            <p>This was built from scratch; hosting, setting up content management system, responsive
-              design, and making it easily customizable.</p>
-          </div>
-        </div>
-      </div>
+      {% capture yolofood %}
+      <p>A simple content management website for a restaurant that believes in serving healthy food that tastes good.</p>
+      <p>This was built from scratch; hosting, setting up content management system, responsive design, and making it easily customizable.</p>
+      {% endcapture %}
+      {% include project-card.html src="/static/img/project-yolofood.png" title="YOLO FOOD" href="http://yolofood.com.sg/" href-name="yolofood.com.sg" description=yolofood %}
     </div>
   </div>
 </section>
