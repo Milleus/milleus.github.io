@@ -168,13 +168,27 @@ callbacks.displayLoadingExperience = function (result) {
   </div>
   <div class="collapsible-body">
     <div class="row">
-      <div class="col s6 m3">
-        <p><strong>Speed</strong></p>
-        <p>${getLoadingExperience(result)}</p>
-      </div>
-      <div class="col s6 m3">
-        <p><strong>Optimization Score</strong></p>
-        <p>${getOptimizationScore(result)}</p>
+      <div class="col s12 m6">
+        <div class="row">
+          <div class="col s6">
+            <p><strong>Speed</strong></p>
+            <p>${getLoadingExperience(result)}</p>
+          </div>
+          <div class="col s6">
+            <p><strong>Response Bytes</strong></p>
+            <p>${getResponseBytes(result)}</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col s6">
+            <p><strong>Optimization Score</strong></p>
+            <p>${getOptimizationScore(result)}</p>
+          </div>
+          <div class="col s6">
+            <p><strong>Resources Referenced:</strong></p>
+            <p>${getNumberResources(result)}</p>
+          </div>
+        </div>
       </div>
       <div class="col s12 m6">
         <p><strong>Recommendations</strong></p>
@@ -206,14 +220,33 @@ function getSiteInfo(result) {
 function getLoadingExperience(result) {
   var speedScore = result.loadingExperience.overall_category;
   var metrics = result.loadingExperience.metrics;
-  var medianDcl = metrics && metrics.DOM_CONTENT_LOADED_EVENT_FIRED_MS ? metrics.DOM_CONTENT_LOADED_EVENT_FIRED_MS.median : 'NA';
-  var medianFcp = metrics && metrics.FIRST_CONTENTFUL_PAINT_MS ? metrics.FIRST_CONTENTFUL_PAINT_MS.median : 'NA';
-  return `Overall: <strong class="${speedScore}">${speedScore}</strong><br>FCP: ${medianFcp}<br>DCL: ${medianDcl}`;
+  var medianDcl = metrics && metrics.DOM_CONTENT_LOADED_EVENT_FIRED_MS ? formatSeconds(metrics.DOM_CONTENT_LOADED_EVENT_FIRED_MS.median) : 'NA';
+  var medianFcp = metrics && metrics.FIRST_CONTENTFUL_PAINT_MS ? formatSeconds(metrics.FIRST_CONTENTFUL_PAINT_MS.median) : 'NA';
+  return `Overall: <strong class="${speedScore}">${speedScore}</strong><br>First Contentful Paint: ${medianFcp}<br>DOM Content Loaded: ${medianDcl}`;
+}
+
+function getResponseBytes(result) {
+  var htmlResponseBytes = formatBytes(result.pageStats.htmlResponseBytes);
+  var cssResponseBytes = formatBytes(result.pageStats.cssResponseBytes);
+  var javascriptResponseBytes = formatBytes(result.pageStats.javascriptResponseBytes);
+  var imageResponseBytes = formatBytes(result.pageStats.imageResponseBytes);
+
+  return `HTML: ${htmlResponseBytes}<br>
+  CSS: ${cssResponseBytes}<br>
+  Javascript: ${javascriptResponseBytes}<br>
+  Image: ${imageResponseBytes}`;
 }
 
 function getOptimizationScore(result) {
   var optimizationScore = result.ruleGroups.SPEED.score;
   return optimizationScore;
+}
+
+function getNumberResources(result) {
+  var numberCssResources = result.pageStats.numberCssResources;
+  var numberJsResources = result.pageStats.numberJsResources;
+
+  return `CSS: ${numberCssResources}<br>Javascript: ${numberJsResources}`;
 }
 
 function getRecommendations(result) {
@@ -225,8 +258,6 @@ function getRecommendations(result) {
       continue;
     }
 
-    var name = ruleResults[i].localizedRuleName;
-    var impact = ruleResults[i].ruleImpact;
     tabulateImpact(ruleResults[i]);
 
     recommendations.push({
@@ -238,7 +269,7 @@ function getRecommendations(result) {
 
   var recommendationString = '';
   for (var i in recommendations) {
-    recommendationString += `<li>${recommendations[i].name} (${recommendations[i].impact})</li>`;
+    recommendationString += `<li>${recommendations[i].name} (${recommendations[i].impact.toFixed(2)})</li>`;
   }
   return recommendationString;
 }
@@ -270,7 +301,7 @@ function setStats(selector) {
   var appendString = '';
 
   for (var i = 0; i < 3; i++) {
-    appendString += `<li>${impactArr[i].localizedRuleName} (${impactArr[i].impact})<br>No. of Affected: ${impactArr[i].affected}</li>`;
+    appendString += `<li><strong>${impactArr[i].localizedRuleName} (${impactArr[i].impact.toFixed(2)})</strong><br>Affected Sites: ${impactArr[i].affected}</li>`;
   }
 
   selected.innerHTML = appendString;
@@ -289,3 +320,10 @@ function sortByImpact(a, b) {
 function sortByAffected(a, b) {
   return b.affected - a.affected;
 }
+
+function formatSeconds(ms) {
+  var seconds = ms / 1000;
+  return `${seconds.toFixed(2)}s`;
+}
+
+function formatBytes(a,b){if(0==a)return"0 Bytes";var c=1024,d=b||2,e=["Bytes","KB","MB","GB","TB","PB","EB","ZB","YB"],f=Math.floor(Math.log(a)/Math.log(c));return parseFloat((a/Math.pow(c,f)).toFixed(d))+" "+e[f]}
