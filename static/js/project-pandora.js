@@ -168,31 +168,32 @@ callbacks.displayLoadingExperience = function (result) {
   </div>
   <div class="collapsible-body">
     <div class="row">
-      <div class="col s12 m6">
-        <div class="row">
-          <div class="col s6">
-            <p><strong>Speed</strong></p>
-            <p>${getLoadingExperience(result)}</p>
-          </div>
-          <div class="col s6">
-            <p><strong>Response Bytes</strong></p>
-            <p>${getResponseBytes(result)}</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col s6">
-            <p><strong>Optimization Score</strong></p>
-            <p>${getOptimizationScore(result)}</p>
-          </div>
-          <div class="col s6">
-            <p><strong>Resources Referenced:</strong></p>
-            <p>${getNumberResources(result)}</p>
-          </div>
-        </div>
+      <div class="col s12 m3">
+        <p><strong>Speed</strong></p>
+        <p>${getLoadingExperience(result)}</p>
       </div>
+      <div class="col s12 m3">
+        <p><strong>Response Bytes</strong></p>
+        <p>${getResponseBytes(result)}</p>
+      </div>
+      <div class="col s12 m3">
+        <p><strong>Resources Referenced</strong></p>
+        <p>${getNumberResources(result)}</p>
+      </div>
+      <div class="col s12 m3">
+        <p><strong>Optimization Score</strong></p>
+        <p>${getOptimizationScore(result)}</p>
+      </div>
+    </div>
+
+    <div class="row">
       <div class="col s12 m6">
         <p><strong>Recommendations</strong></p>
         <ol>${getRecommendations(result)}</ol>
+      </div>
+      <div class="col s12 m6">
+        <p><strong>Already Optimized</strong></p>
+        <ol>${getOptimized(result)}</ol>
       </div>
     </div>
   </div>`;
@@ -250,7 +251,6 @@ function getNumberResources(result) {
 }
 
 function getRecommendations(result) {
-  var siteUrl = result.id;
   var recommendations = [];
   var ruleResults = result.formattedResults.ruleResults;
   for (var i in ruleResults) {
@@ -272,6 +272,24 @@ function getRecommendations(result) {
     recommendationString += `<li>${recommendations[i].name} (Impact: ${recommendations[i].impact.toFixed(2)})</li>`;
   }
   return recommendationString;
+}
+
+function getOptimized(result) {
+  var optimized = [];
+  var ruleResults = result.formattedResults.ruleResults;
+  for (var i in ruleResults) {
+    if (ruleResults[i].ruleImpact > 0) {
+      continue;
+    }
+
+    optimized.push(ruleResults[i].localizedRuleName);
+  };
+
+  var optimizedString = '';
+  for (var i in optimized) {
+    optimizedString += `<li>${optimized[i]}</li>`;
+  }
+  return optimizedString;
 }
 
 function tabulateImpact(rule) {
