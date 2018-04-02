@@ -96,6 +96,7 @@ var DOMAIN_LIST = [
 ];
 
 var callbacks = {};
+var affectedArr = [];
 var impactArr = [];
 var idx = 0;
 var siteCount = 0;
@@ -201,10 +202,10 @@ callbacks.displayLoadingExperience = function (result) {
   var collapsible = document.querySelector('.collapsible');
   collapsible.appendChild(li);
 
+  affectedArr.sort(sortByAffected);
+  setRecByAffected('#recommendations-by-affected');
   impactArr.sort(sortByImpact);
-  setStats('#recommendations-by-impact');
-  impactArr.sort(sortByAffected);
-  setStats('#recommendations-by-affected');
+  setRecByImpact('#recommendations-by-impact');
   console.log('Adding Site:', result.id);
 
   siteCount++;
@@ -258,18 +259,26 @@ function getRecommendations(result) {
       continue;
     }
 
-    tabulateImpact(ruleResults[i]);
+    tabulateAffected(ruleResults[i]);
 
     recommendations.push({
-      name: ruleResults[i].localizedRuleName,
+      localizedRuleName: ruleResults[i].localizedRuleName,
       impact: ruleResults[i].ruleImpact
     });
   };
+
   recommendations.sort(sortByImpact);
+  if (recommendations[0]) {
+    impactArr.push({
+      siteName: result.id,
+      localizedRuleName: recommendations[0].localizedRuleName,
+      impact: recommendations[0].impact
+    });
+  }
 
   var recommendationString = '';
   for (var i in recommendations) {
-    recommendationString += `<li>${recommendations[i].name} (Impact: ${recommendations[i].impact.toFixed(2)})</li>`;
+    recommendationString += `<li>${recommendations[i].localizedRuleName} (Impact: ${recommendations[i].impact.toFixed(2)})</li>`;
   }
   return recommendationString;
 }
@@ -292,12 +301,11 @@ function getOptimized(result) {
   return optimizedString;
 }
 
-function tabulateImpact(rule) {
+function tabulateAffected(rule) {
   var isKeyFound = false;
-  for (i in impactArr) {
-    var obj = impactArr[i];
+  for (i in affectedArr) {
+    var obj = affectedArr[i];
     if (obj.localizedRuleName == rule.localizedRuleName) {
-      obj.impact += rule.ruleImpact;
       obj.affected += 1;
       isKeyFound = true;
     }
@@ -307,20 +315,34 @@ function tabulateImpact(rule) {
     return;
   }
 
-  impactArr.push({
+  affectedArr.push({
     localizedRuleName: rule.localizedRuleName,
-    impact: rule.ruleImpact,
     affected: 1
   });
 }
 
-function setStats(selector) {
+function setRecByAffected(selector) {
   var selected = document.querySelector(selector);
   var appendString = '';
 
-  for (var i = 0; i < 3; i++) {
-    appendString += `<li><strong>${impactArr[i].localizedRuleName} (Impact: ${impactArr[i].impact.toFixed(2)})</strong><br>Affected Sites: ${impactArr[i].affected}</li>`;
-  }
+  affectedArr.forEach(function (value, idx) {
+    if (idx < 5) {
+      appendString += `<li><strong>${affectedArr[idx].localizedRuleName} (Sites Affected: ${affectedArr[idx].affected})</strong></li>`;
+    }
+  });
+
+  selected.innerHTML = appendString;
+}
+
+function setRecByImpact(selector) {
+  var selected = document.querySelector(selector);
+  var appendString = '';
+
+  impactArr.forEach(function (value, idx) {
+    if (idx < 5) {
+      appendString += `<li><strong>${impactArr[idx].localizedRuleName} (Impact: ${impactArr[idx].impact.toFixed(2)})</strong><br>${impactArr[idx].siteName}</li>`;  
+    }
+  });
 
   selected.innerHTML = appendString;
 }
@@ -344,4 +366,4 @@ function formatSeconds(ms) {
   return `${seconds.toFixed(2)}s`;
 }
 
-function formatBytes(a,b){if(0==a)return"0 Bytes";var c=1024,d=b||2,e=["Bytes","KB","MB","GB","TB","PB","EB","ZB","YB"],f=Math.floor(Math.log(a)/Math.log(c));return parseFloat((a/Math.pow(c,f)).toFixed(d))+" "+e[f]}
+function formatBytes(a, b) { if (0 == a) return "0 Bytes"; var c = 1024, d = b || 2, e = ["Bytes", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB"], f = Math.floor(Math.log(a) / Math.log(c)); return parseFloat((a / Math.pow(c, f)).toFixed(d)) + " " + e[f] }
