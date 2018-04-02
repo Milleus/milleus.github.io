@@ -14,23 +14,30 @@
   <section id="pandora">
     <div class="row">
       <div class="col s6 center">
-        <h3>Rule with most Impact</h3>
-        <p id="rule-by-impact">tabulating...</p>
+        <h3>Top 3 Rules with most Impact</h3>
+        <ul id="rule-by-impact"></ul>
       </div>
       <div class="col s6 center">
-        <h3>Rule affecting most Sites</h3>
-        <p id="rule-by-affected">tabulating...</p>
+        <h3>Top 3 Rule affecting most Sites</h3>
+        <ul id="rule-by-affected"></ul>
       </div>
     </div>
-    <table>
-      <tr>
-        <th>Site Name</th>
-        <th>Speed</th>
-        <th>Optimization Score</th>
-        <th>Recommendations & Impact</th>
-      </tr>
-      <tbody></tbody>
-    </table>
+    <div class="row">
+      <div class="col s12">
+        <table class="responsive-table striped">
+          <thead>
+            <tr>
+              <th>Site Name</th>
+              <th>Speed</th>
+              <th>Optimization Score</th>
+              <th>Recommendations & Impact</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+
   </section>
 
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
