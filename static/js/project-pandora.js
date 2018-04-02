@@ -1,103 +1,104 @@
 var API_KEY = 'AIzaSyBpI_JymH-mU-Xg26h90FPF36V1XlSISdY';
 var API_URL = 'https://www.googleapis.com/pagespeedonline/v4/runPagespeed?';
-var URL_LIST = [
+var DOMAIN_LIST = [
   // ministries (16)
-  'http://www.mci.gov.sg',
-  'http://www.mccy.gov.sg',
-  'http://www.mindef.gov.sg',
-  'http://www.moe.gov.sg',
-  'http://www.mof.gov.sg',
-  'http://www.mfa.gov.sg',
-  'http://www.moh.gov.sg',
-  'http://www.mha.gov.sg',
-  'http://www.mlaw.gov.sg',
-  'http://www.mom.gov.sg',
-  'http://www.mnd.gov.sg',
-  'http://www.msf.gov.sg',
-  'http://www.mewr.gov.sg',
-  'http://www.mti.gov.sg',
-  'http://www.mot.gov.sg',
-  'http://www.pmo.gov.sg',
+  'mci.gov.sg',
+  'mccy.gov.sg',
+  'mindef.gov.sg',
+  'moe.gov.sg',
+  'mof.gov.sg',
+  'mfa.gov.sg',
+  'moh.gov.sg',
+  'mha.gov.sg',
+  'mlaw.gov.sg',
+  'mom.gov.sg',
+  'mnd.gov.sg',
+  'msf.gov.sg',
+  'mewr.gov.sg',
+  'mti.gov.sg',
+  'mot.gov.sg',
+  'pmo.gov.sg',
   // statutory boards (63)
-  'http://www.acra.gov.sg',
-  'http://www.a-star.edu.sg',
-  'http://www.ava.gov.sg',
-  'http://www.boa.gov.sg',
-  'http://www.bca.gov.sg',
-  'http://www.cra.gov.sg',
-  'http://www.cpf.gov.sg',
-  'http://www.caas.gov.sg',
-  'http://www.cscollege.gov.sg',
-  'http://www.cccs.gov.sg',
-  'http://www.cea.gov.sg',
-  'http://www.dsta.gov.sg',
-  'http://www.sedb.com',
-  'http://www.ema.gov.sg',
-  'http://www.tech.gov.sg',
-  'http://www.hpb.gov.sg',
-  'http://www.hsa.gov.sg',
-  'http://www.hlb.gov.sg',
-  'http://www.hdb.gov.sg',
-  'http://www.imda.gov.sg',
-  'http://www.iras.gov.sg',
-  'http://www.ite.edu.sg',
-  'http://www.ipos.gov.sg',
-  'http://www.iesingapore.gov.sg',
-  'http://www.iseas.edu.sg',
-  'http://www.jtc.gov.sg',
-  'http://www.lta.gov.sg',
-  'http://www.muis.gov.sg',
-  'http://www.mpa.gov.sg',
-  'http://www.mas.gov.sg',
-  'http://www.nyp.edu.sg',
-  'http://www.nac.gov.sg',
-  'http://www.ncss.gov.sg',
-  'http://www.nea.gov.sg',
-  'http://www.nhb.gov.sg',
-  'http://www.nlb.gov.sg',
-  'http://www.nparks.gov.sg',
-  'http://www.np.edu.sg',
-  'http://www.pa.gov.sg',
-  'http://www.peb.gov.sg',
-  'http://www.pub.gov.sg',
-  'http://www.ptc.gov.sg',
-  'http://www.rp.edu.sg',
-  'http://www.science.edu.sg',
-  'http://www.sentosa.com.sg',
-  'http://www.sac.gov.sg',
-  'http://www.score.gov.sg',
-  'http://www.sdc.gov.sg',
-  'http://www.seab.gov.sg',
-  'http://www.sla.gov.sg',
-  'http://www.smc.gov.sg',
-  'http://www.snb.gov.sg',
-  'http://www.spc.gov.sg',
-  'http://www.sp.edu.sg',
-  'http://www.stb.gov.sg',
-  'http://www.skillsfuture.sg',
-  'http://www.sportsingapore.gov.sg',
-  'http://www.spring.gov.sg',
-  'http://www.tcmpb.gov.sg',
-  'http://www.tp.edu.sg',
-  'http://www.toteboard.gov.sg',
-  'http://www.ura.gov.sg',
-  'http://www.wsg.gov.sg',
+  'acra.gov.sg',
+  'a-star.edu.sg',
+  'ava.gov.sg',
+  'boa.gov.sg',
+  'bca.gov.sg',
+  'cra.gov.sg',
+  'cpf.gov.sg',
+  'caas.gov.sg',
+  'cscollege.gov.sg',
+  'cccs.gov.sg',
+  'cea.gov.sg',
+  'dsta.gov.sg',
+  'sedb.com',
+  'ema.gov.sg',
+  'tech.gov.sg',
+  'hpb.gov.sg',
+  'hsa.gov.sg',
+  'hlb.gov.sg',
+  'hdb.gov.sg',
+  'imda.gov.sg',
+  'iras.gov.sg',
+  'ite.edu.sg',
+  'ipos.gov.sg',
+  'iesingapore.gov.sg',
+  'iseas.edu.sg',
+  'jtc.gov.sg',
+  'lta.gov.sg',
+  'muis.gov.sg',
+  'mpa.gov.sg',
+  'mas.gov.sg',
+  'nyp.edu.sg',
+  'nac.gov.sg',
+  'ncss.gov.sg',
+  'nea.gov.sg',
+  'nhb.gov.sg',
+  'nlb.gov.sg',
+  'nparks.gov.sg',
+  'np.edu.sg',
+  'pa.gov.sg',
+  'peb.gov.sg',
+  'pub.gov.sg',
+  'ptc.gov.sg',
+  'rp.edu.sg',
+  'science.edu.sg',
+  'sentosa.com.sg',
+  'sac.gov.sg',
+  'score.gov.sg',
+  'sdc.gov.sg',
+  'seab.gov.sg',
+  'sla.gov.sg',
+  'smc.gov.sg',
+  'snb.gov.sg',
+  'spc.gov.sg',
+  'sp.edu.sg',
+  'stb.gov.sg',
+  'skillsfuture.sg',
+  'sportsingapore.gov.sg',
+  'spring.gov.sg',
+  'tcmpb.gov.sg',
+  'tp.edu.sg',
+  'toteboard.gov.sg',
+  'ura.gov.sg',
+  'wsg.gov.sg',
   // organs of state (10)
-  'http://www.agc.gov.sg',
-  'http://www.ago.gov.sg',
-  'http://www.iac.gov.sg',
-  'http://www.istana.gov.sg',
-  'http://www.familyjusticecourts.gov.sg',
-  'http://www.statecourts.gov.sg',
-  'http://www.supremecourt.gov.sg',
-  'http://www.parliament.gov.sg',
-  'http://www.psc.gov.sg',
-  'http://www.cabinet.gov.sg'
+  'agc.gov.sg',
+  'ago.gov.sg',
+  'iac.gov.sg',
+  'istana.gov.sg',
+  'familyjusticecourts.gov.sg',
+  'statecourts.gov.sg',
+  'supremecourt.gov.sg',
+  'parliament.gov.sg',
+  'psc.gov.sg',
+  'cabinet.gov.sg'
 ];
 
 var callbacks = {};
 var impactArr = [];
 var idx = 0;
+var siteCount = 0;
 
 // Invokes the PageSpeed Insights API. The response will contain
 // JavaScript that invokes our callback with the PageSpeed results.
@@ -106,12 +107,12 @@ function runPagespeed() {
 }
 
 function generateScript() {
-  if (idx < URL_LIST.length) {
+  if (idx < DOMAIN_LIST.length) {
     var s = document.createElement('script');
     s.type = 'text/javascript';
     s.async = true;
     var query = [
-      'url=' + URL_LIST[idx],
+      'url=http://www.' + DOMAIN_LIST[idx],
       'callback=runPagespeedCallbacks',
       'key=' + API_KEY,
     ].join('&');
@@ -119,7 +120,7 @@ function generateScript() {
     s.src = API_URL + query;
     document.head.insertBefore(s, null);
 
-    console.log('Request:', URL_LIST[idx], ', Timestamp:', new Date());
+    console.log('Request:', DOMAIN_LIST[idx], ', Timestamp:', new Date());
     idx++;
     setTimeout(generateScript, 2000);
   }
@@ -138,8 +139,6 @@ function runPagespeedCallbacks(result) {
     return;
   }
 
-  console.log('Adding Site:', result.id);
-
   for (var fn in callbacks) {
     var f = callbacks[fn];
     if (typeof f == 'function') {
@@ -154,20 +153,48 @@ function runPagespeedCallbacks(result) {
 setTimeout(runPagespeed, 0);
 
 callbacks.displayLoadingExperience = function (result) {
-  var appendString = `<td>${getSiteInfo(result)}</td>`;
-  appendString += `<td>${getLoadingExperience(result)}</td>`;
-  appendString += `<td>${getOptimizationScore(result)}</td>`;
-  appendString += `<td>${getRecommendations(result)}</td>`;
+  var overallSpeed = result.loadingExperience.overall_category;
+  var li = document.createElement('li');
+  li.innerHTML = `
+  <div class="collapsible-header display-flex align-items-center justify-content-space-between">
+    <div class="display-flex align-items-center">
+      <i class="material-icons">add</i>
+      <div>${getSiteInfo(result)}</div>
+    </div>
+    <div class="right-align">
+      <div>Overall Speed</div>
+      <strong class="${overallSpeed}">${overallSpeed}</strong>
+    </div>
+  </div>
+  <div class="collapsible-body">
+    <div class="row">
+      <div class="col s6 m3">
+        <p><strong>Speed</strong></p>
+        <p>${getLoadingExperience(result)}</p>
+      </div>
+      <div class="col s6 m3">
+        <p><strong>Optimization Score</strong></p>
+        <p>${getOptimizationScore(result)}</p>
+      </div>
+      <div class="col s12 m6">
+        <p><strong>Recommendations</strong></p>
+        <ol>${getRecommendations(result)}</ol>
+      </div>
+    </div>
+  </div>`;
 
-  var tr = document.createElement('tr');
-  tr.innerHTML = appendString;
-  var tbody = document.querySelector('tbody');
-  tbody.appendChild(tr);
+  var collapsible = document.querySelector('.collapsible');
+  collapsible.appendChild(li);
 
   impactArr.sort(sortByImpact);
   setStats('#rule-by-impact');
   impactArr.sort(sortByAffected);
   setStats('#rule-by-affected');
+  console.log('Adding Site:', result.id);
+
+  siteCount++;
+  var queryStatus = document.querySelector('#query-status');
+  queryStatus.innerHTML = `Loading... ${siteCount} of ${DOMAIN_LIST.length} successfully added.`;
 }
 
 function getSiteInfo(result) {
@@ -181,7 +208,7 @@ function getLoadingExperience(result) {
   var metrics = result.loadingExperience.metrics;
   var medianDcl = metrics && metrics.DOM_CONTENT_LOADED_EVENT_FIRED_MS ? metrics.DOM_CONTENT_LOADED_EVENT_FIRED_MS.median : 'NA';
   var medianFcp = metrics && metrics.FIRST_CONTENTFUL_PAINT_MS ? metrics.FIRST_CONTENTFUL_PAINT_MS.median : 'NA';
-  return `Overall: ${speedScore}<br>FCP: ${medianFcp}<br>DCL: ${medianDcl}`;
+  return `Overall: <strong class="${speedScore}">${speedScore}</strong><br>FCP: ${medianFcp}<br>DCL: ${medianDcl}`;
 }
 
 function getOptimizationScore(result) {
@@ -211,7 +238,7 @@ function getRecommendations(result) {
 
   var recommendationString = '';
   for (var i in recommendations) {
-    recommendationString += `${recommendations[i].name} (${recommendations[i].impact})<br>`;
+    recommendationString += `<li>${recommendations[i].name} (${recommendations[i].impact})</li>`;
   }
   return recommendationString;
 }
@@ -234,7 +261,7 @@ function tabulateImpact(rule) {
   impactArr.push({
     localizedRuleName: rule.localizedRuleName,
     impact: rule.ruleImpact,
-    affected: 0
+    affected: 1
   });
 }
 
@@ -248,6 +275,11 @@ function setStats(selector) {
 
   selected.innerHTML = appendString;
 }
+
+window.addEventListener('load', function () {
+  var queryStatus = document.querySelector('#query-status');
+  queryStatus.innerHTML = `Queries have ended. ${siteCount} of ${DOMAIN_LIST.length} successfully added.`;
+});
 
 // Helper function that sorts results in order of impact.
 function sortByImpact(a, b) {
