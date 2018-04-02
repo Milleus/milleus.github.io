@@ -201,9 +201,9 @@ callbacks.displayLoadingExperience = function (result) {
   collapsible.appendChild(li);
 
   impactArr.sort(sortByImpact);
-  setStats('#rule-by-impact');
+  setStats('#recommendations-by-impact');
   impactArr.sort(sortByAffected);
-  setStats('#rule-by-affected');
+  setStats('#recommendations-by-affected');
   console.log('Adding Site:', result.id);
 
   siteCount++;
@@ -269,7 +269,7 @@ function getRecommendations(result) {
 
   var recommendationString = '';
   for (var i in recommendations) {
-    recommendationString += `<li>${recommendations[i].name} (${recommendations[i].impact.toFixed(2)})</li>`;
+    recommendationString += `<li>${recommendations[i].name} (Impact: ${recommendations[i].impact.toFixed(2)})</li>`;
   }
   return recommendationString;
 }
@@ -301,7 +301,7 @@ function setStats(selector) {
   var appendString = '';
 
   for (var i = 0; i < 3; i++) {
-    appendString += `<li><strong>${impactArr[i].localizedRuleName} (${impactArr[i].impact.toFixed(2)})</strong><br>Affected Sites: ${impactArr[i].affected}</li>`;
+    appendString += `<li><strong>${impactArr[i].localizedRuleName} (Impact: ${impactArr[i].impact.toFixed(2)})</strong><br>Affected Sites: ${impactArr[i].affected}</li>`;
   }
 
   selected.innerHTML = appendString;
