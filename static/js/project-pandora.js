@@ -158,7 +158,7 @@ callbacks.displayLoadingExperience = function (result) {
   var li = document.createElement('li');
   li.innerHTML = `
   <div class="collapsible-header display-flex align-items-center justify-content-space-between">
-    <div class="display-flex align-items-center">
+    <div class="display-flex align-items-center item-left break-word">
       <i class="material-icons">add</i>
       <div>${getSiteInfo(result)}</div>
     </div>
@@ -327,7 +327,7 @@ function setRecByAffected(selector) {
 
   affectedArr.forEach(function (value, idx) {
     if (idx < 5) {
-      appendString += `<li><strong>${affectedArr[idx].localizedRuleName} (Sites Affected: ${affectedArr[idx].affected})</strong></li>`;
+      appendString += `<li><strong>${affectedArr[idx].localizedRuleName} (Affected: ${affectedArr[idx].affected})</strong></li>`;
     }
   });
 
@@ -340,7 +340,7 @@ function setRecByImpact(selector) {
 
   impactArr.forEach(function (value, idx) {
     if (idx < 5) {
-      appendString += `<li><strong>${impactArr[idx].localizedRuleName} (Impact: ${impactArr[idx].impact.toFixed(2)})</strong><br>${impactArr[idx].siteName}</li>`;  
+      appendString += `<li><strong>${impactArr[idx].localizedRuleName} (Impact: ${impactArr[idx].impact.toFixed(2)})</strong><br>${impactArr[idx].siteName}</li>`;
     }
   });
 
