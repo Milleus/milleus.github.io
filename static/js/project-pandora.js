@@ -19,80 +19,80 @@ var DOMAIN_LIST = [
   'mot.gov.sg',
   'pmo.gov.sg',
   // statutory boards (63)
-  'acra.gov.sg',
-  'a-star.edu.sg',
-  'ava.gov.sg',
-  'boa.gov.sg',
-  'bca.gov.sg',
-  'cra.gov.sg',
-  'cpf.gov.sg',
-  'caas.gov.sg',
-  'cscollege.gov.sg',
-  'cccs.gov.sg',
-  'cea.gov.sg',
-  'dsta.gov.sg',
-  'sedb.com',
-  'ema.gov.sg',
-  'tech.gov.sg',
-  'hpb.gov.sg',
-  'hsa.gov.sg',
-  'hlb.gov.sg',
-  'hdb.gov.sg',
-  'imda.gov.sg',
-  'iras.gov.sg',
-  'ite.edu.sg',
-  'ipos.gov.sg',
-  'iesingapore.gov.sg',
-  'iseas.edu.sg',
-  'jtc.gov.sg',
-  'lta.gov.sg',
-  'muis.gov.sg',
-  'mpa.gov.sg',
-  'mas.gov.sg',
-  'nyp.edu.sg',
-  'nac.gov.sg',
-  'ncss.gov.sg',
-  'nea.gov.sg',
-  'nhb.gov.sg',
-  'nlb.gov.sg',
-  'nparks.gov.sg',
-  'np.edu.sg',
-  'pa.gov.sg',
-  'peb.gov.sg',
-  'pub.gov.sg',
-  'ptc.gov.sg',
-  'rp.edu.sg',
-  'science.edu.sg',
-  'sentosa.com.sg',
-  'sac.gov.sg',
-  'score.gov.sg',
-  'sdc.gov.sg',
-  'seab.gov.sg',
-  'sla.gov.sg',
-  'smc.gov.sg',
-  'snb.gov.sg',
-  'spc.gov.sg',
-  'sp.edu.sg',
-  'stb.gov.sg',
-  'skillsfuture.sg',
-  'sportsingapore.gov.sg',
-  'spring.gov.sg',
-  'tcmpb.gov.sg',
-  'tp.edu.sg',
-  'toteboard.gov.sg',
-  'ura.gov.sg',
-  'wsg.gov.sg',
+  // 'acra.gov.sg',
+  // 'a-star.edu.sg',
+  // 'ava.gov.sg',
+  // 'boa.gov.sg',
+  // 'bca.gov.sg',
+  // 'cra.gov.sg',
+  // 'cpf.gov.sg',
+  // 'caas.gov.sg',
+  // 'cscollege.gov.sg',
+  // 'cccs.gov.sg',
+  // 'cea.gov.sg',
+  // 'dsta.gov.sg',
+  // 'sedb.com',
+  // 'ema.gov.sg',
+  // 'tech.gov.sg',
+  // 'hpb.gov.sg',
+  // 'hsa.gov.sg',
+  // 'hlb.gov.sg',
+  // 'hdb.gov.sg',
+  // 'imda.gov.sg',
+  // 'iras.gov.sg',
+  // 'ite.edu.sg',
+  // 'ipos.gov.sg',
+  // 'iesingapore.gov.sg',
+  // 'iseas.edu.sg',
+  // 'jtc.gov.sg',
+  // 'lta.gov.sg',
+  // 'muis.gov.sg',
+  // 'mpa.gov.sg',
+  // 'mas.gov.sg',
+  // 'nyp.edu.sg',
+  // 'nac.gov.sg',
+  // 'ncss.gov.sg',
+  // 'nea.gov.sg',
+  // 'nhb.gov.sg',
+  // 'nlb.gov.sg',
+  // 'nparks.gov.sg',
+  // 'np.edu.sg',
+  // 'pa.gov.sg',
+  // 'peb.gov.sg',
+  // 'pub.gov.sg',
+  // 'ptc.gov.sg',
+  // 'rp.edu.sg',
+  // 'science.edu.sg',
+  // 'sentosa.com.sg',
+  // 'sac.gov.sg',
+  // 'score.gov.sg',
+  // 'sdc.gov.sg',
+  // 'seab.gov.sg',
+  // 'sla.gov.sg',
+  // 'smc.gov.sg',
+  // 'snb.gov.sg',
+  // 'spc.gov.sg',
+  // 'sp.edu.sg',
+  // 'stb.gov.sg',
+  // 'skillsfuture.sg',
+  // 'sportsingapore.gov.sg',
+  // 'spring.gov.sg',
+  // 'tcmpb.gov.sg',
+  // 'tp.edu.sg',
+  // 'toteboard.gov.sg',
+  // 'ura.gov.sg',
+  // 'wsg.gov.sg',
   // organs of state (10)
-  'agc.gov.sg',
-  'ago.gov.sg',
-  'iac.gov.sg',
-  'istana.gov.sg',
-  'familyjusticecourts.gov.sg',
-  'statecourts.gov.sg',
-  'supremecourt.gov.sg',
-  'parliament.gov.sg',
-  'psc.gov.sg',
-  'cabinet.gov.sg'
+  // 'agc.gov.sg',
+  // 'ago.gov.sg',
+  // 'iac.gov.sg',
+  // 'istana.gov.sg',
+  // 'familyjusticecourts.gov.sg',
+  // 'statecourts.gov.sg',
+  // 'supremecourt.gov.sg',
+  // 'parliament.gov.sg',
+  // 'psc.gov.sg',
+  // 'cabinet.gov.sg'
 ];
 
 var callbacks = {};
@@ -101,8 +101,6 @@ var impactArr = [];
 var idx = 0;
 var siteCount = 0;
 
-// Invokes the PageSpeed Insights API. The response will contain
-// JavaScript that invokes our callback with the PageSpeed results.
 function runPagespeed() {
   generateScript();
 }
@@ -123,7 +121,9 @@ function generateScript() {
 
     console.log('Request:', DOMAIN_LIST[idx], ', Timestamp:', new Date());
     idx++;
-    setTimeout(generateScript, 2000);
+    // 60 requests per 100 seconds per user, throttle requests when necessary
+    // setTimeout(generateScript, 2000);
+    setTimeout(generateScript, 0);
   }
 }
 
@@ -148,9 +148,6 @@ function runPagespeedCallbacks(result) {
   }
 }
 
-// Invoke the callback that fetches results. Async here so we're sure
-// to discover any callbacks registered below, but this can be
-// synchronous in your code.
 setTimeout(runPagespeed, 0);
 
 callbacks.displayLoadingExperience = function (result) {
@@ -352,7 +349,6 @@ window.addEventListener('load', function () {
   queryStatus.innerHTML = `Queries have ended. ${siteCount} of ${DOMAIN_LIST.length} successfully added.`;
 });
 
-// Helper function that sorts results in order of impact.
 function sortByImpact(a, b) {
   return b.impact - a.impact;
 }

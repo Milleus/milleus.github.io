@@ -5,8 +5,17 @@
   <link rel="shortcut icon" href="/static/img/favicon.ico" type="image/x-icon">
   <link rel="icon" href="/static/img/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <link rel="stylesheet" href="/static/css/materialize.min.css" media="screen,projection" />
-  <link rel="stylesheet" href="/static/css/project-pandora.css" media="screen,projection" />
+  <link rel="stylesheet" href="/static/css/materialize.min.css" media="screen,projection">
+  <style>
+    .display-flex { display: flex; }
+    .align-items-center { align-items: center; }
+    .justify-content-space-between { justify-content: space-between; }
+    .break-word { word-break: break-word; }
+    .item-left { max-width: 70%; }
+    .SLOW { color: red; }
+    .AVERAGE { color: orange; }
+    .FAST { color: green; }
+  </style>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dave Quah - Pandora</title>
 </head>
@@ -16,7 +25,8 @@
     <div class="container">
       <div class="row">
         <div class="col s12">
-          <h3>Pagespeed Insights on Singapore Government websites</h3>
+          <h4>Pagespeed Insights on Singapore Government websites</h4>
+          <p>This demo only queries for 16 ministry websites.</p>
           <p id="query-status">Initializing...</p>
         </div>
       </div>
