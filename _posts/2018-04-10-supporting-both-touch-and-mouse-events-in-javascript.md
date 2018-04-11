@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Supporting both touch and mouse events in Javascript"
-date: 2018-03-12
+date: 2018-04-10
 ---
 
 ### Given
