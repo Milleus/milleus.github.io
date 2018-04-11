@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Touch devices triggering touch and mouse events"
+title: "Touch events triggering mouse events"
 date: 2018-04-10
 ---
 
