@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Touch events triggering mouse events"
-date: 2018-04-10
+date: 2018-04-08
 ---
 
 ### Given
