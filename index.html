@@ -4,14 +4,18 @@ title: Home
 ---
 <section id="home">
   <h1>Hello! I'm Dave.</h1>
-  <p class="caption">I'm a&nbsp;<mark id="typity"></mark></p>
+  <p class="caption">I'm a&nbsp;
+    <mark id="typity"></mark>
+  </p>
 </section>
 
 <section id="about" class="dark-side">
   <div class="container">
     <div class="row">
       <div class="col s12">
-        <h3 class="header">About <span class="dirty-text">Me</span></h3>
+        <h3 class="header">About
+          <span class="dirty-text">Me</span>
+        </h3>
       </div>
       <div class="col m4">
         <p class="sub-header">Who am I</p>
@@ -28,8 +32,10 @@ title: Home
       <div class="col m4">
         <p class="sub-header">What's next</p>
         <div class="line"></div>
-        <p>There's something intriguing about user web behaviour! I've been fortunate enough to get my hands dirty with tons
-            of web data, and for the past few months I have been delving deep into web analytics.</p>
+        <p>Working on the 
+          <a href="https://www.smartnation.sg/initiatives/Services/moments-of-life-initiative-begins-with-supporting-every-young-child">Moments of Life initiative</a>. It may sound simple, but let me assure you there's a SHIT TON of complexity involved.
+          Look out for the app in June 2018!
+        </p>
       </div>
     </div>
   </div>
@@ -46,44 +52,53 @@ title: Home
       <!-- PANDORA -->
       {% capture pandora %}
       <p>Pandora analyses speed performance of Singapore government websites and provide recommendations for improvement.</p>
-      <p>There is no backend as this purely utilizes Google Pagespeed API. Do take note that it will take some time for queries to return.</p>
-      {% endcapture %}
-      {% include project-card.html src="/static/img/project-pandora.png" title="Pandora" href="/projects/pandora" href-name="View demo" description=pandora %}
+      <p>There is no backend as this purely utilizes Google Pagespeed API. Do take note that it will take some time for queries
+        to return.</p>
+      {% endcapture %} {% include project-card.html src="/static/img/project-pandora.png" title="Pandora" href="/projects/pandora"
+      href-name="View demo" description=pandora %}
 
       <!-- TESSARA -->
       {% capture tessara %}
-      <p>Tessara consolidates feedback from Telegram chat and store in Google Sheets. It automates the painful process of manual feedback consolidation.</p>
+      <p>Tessara consolidates feedback from Telegram chat and store in Google Sheets. It automates the painful process of manual
+        feedback consolidation.</p>
       <p>This utilizes Google Apps Script for wep app hosting and Google CacheService for session management.</p>
-      {% endcapture %}
-      {% include project-card.html src="/static/img/project-tessara.gif" title="Tessara" href="https://github.com/Milleus/tessara" href-name="View repository" description=tessara %}
+      {% endcapture %} {% include project-card.html src="/static/img/project-tessara.gif" title="Tessara" href="https://github.com/Milleus/tessara"
+      href-name="View repository" description=tessara %}
 
       <!-- MELISSA -->
       {% capture melissa %}
-      <p>Melissa recommends a nearby place to eat based on location. It aims to solve the daily problem of deciding where to eat.</p>
+      <p>Melissa recommends a nearby place to eat based on location. It aims to solve the daily problem of deciding where to
+        eat.
+      </p>
       <p>There is no backend as this purely utilizes Google Maps API.</p>
-      {% endcapture %}
-      {% include project-card.html src="/static/img/project-melissa.gif" title="Melissa" href="/projects/melissa" href-name="View demo" description=melissa %}
+      {% endcapture %} {% include project-card.html src="/static/img/project-melissa.gif" title="Melissa" href="/projects/melissa"
+      href-name="View demo" description=melissa %}
 
       <!-- REBECCA -->
       {% capture rebecca %}
-      <p>Rebecca gives you access to another user's mac PC. This wasn't made to solve problems, but rather just to have fun :).</p>
+      <p>Rebecca gives you access to another user's mac PC. This wasn't made to solve problems, but rather just to have fun
+        :).
+      </p>
       <p>Running this script injects ssh key into the victim's mac PC thus giving remote access.</p>
-      {% endcapture %}
-      {% include project-card.html src="/static/img/project-rebecca.png" title="Rebecca" href="https://github.com/Milleus/rebecca" href-name="View repository" description=rebecca %}
+      {% endcapture %} {% include project-card.html src="/static/img/project-rebecca.png" title="Rebecca" href="https://github.com/Milleus/rebecca"
+      href-name="View repository" description=rebecca %}
 
       <!-- CALORIE CALCULATOR -->
       {% capture calculator %}
-      <p>A calorie calculator that recommends target meal plans based on user information such as age, height, weight, gender and activity level. It aims to help users lose weight through weekly planned meals.</p>
+      <p>A calorie calculator that recommends target meal plans based on user information such as age, height, weight, gender
+        and activity level. It aims to help users lose weight through weekly planned meals.</p>
       <p>This was built with Laravel framework.</p>
-      {% endcapture %}
-      {% include project-card.html src="/static/img/project-calorie-calculator.png" title="Calorie Calc" href="http://calculator.yolofood.com.sg/" href-name="View site" description=calculator %}
+      {% endcapture %} {% include project-card.html src="/static/img/project-calorie-calculator.png" title="Calorie Calc" href="http://calculator.yolofood.com.sg/"
+      href-name="View site" description=calculator %}
 
       <!-- YOLO FOOD -->
       {% capture yolofood %}
       <p>A simple content management website for a restaurant that believes in serving healthy food that tastes good.</p>
-      <p>This was built from scratch; hosting, setting up content management system, responsive design, and making it easily customizable.</p>
-      {% endcapture %}
-      {% include project-card.html src="/static/img/project-yolofood.png" title="YOLO FOOD" href="http://yolofood.com.sg/" href-name="View site" description=yolofood %}
+      <p>This was built from scratch; hosting, setting up content management system, responsive design, and making it easily
+        customizable.
+      </p>
+      {% endcapture %} {% include project-card.html src="/static/img/project-yolofood.png" title="YOLO FOOD" href="http://yolofood.com.sg/"
+      href-name="View site" description=yolofood %}
     </div>
   </div>
 </section>
@@ -92,15 +107,22 @@ title: Home
   <div class="container">
     <div class="row">
       <div class="col s12">
-        <h3 class="header"><span class="dirty-text">Get in</span> Touch</h3>
+        <h3 class="header">
+          <span class="dirty-text">Get in</span> Touch</h3>
         <p>If you have something to share with me, work related or not, feel free to drop me a message. I'll try to reply as
           soon as I can.</p>
       </div>
       <div class="col s12 m4">
         <div class="line"></div>
-        <a class="icon-link" href="https://www.facebook.com/milleus" target="_blank"><i class="icon-facebook-squared small"></i></a>
-        <a class="icon-link" href="https://plus.google.com/u/1/111152598083769319838" target="_blank"><i class="icon-gplus-squared small"></i></a>
-        <a class="icon-link" href="https://www.linkedin.com/in/milleus" target="_blank"><i class="icon-linkedin-squared small"></i></a>
+        <a class="icon-link" href="https://www.facebook.com/milleus" target="_blank">
+          <i class="icon-facebook-squared small"></i>
+        </a>
+        <a class="icon-link" href="https://plus.google.com/u/1/111152598083769319838" target="_blank">
+          <i class="icon-gplus-squared small"></i>
+        </a>
+        <a class="icon-link" href="https://www.linkedin.com/in/milleus" target="_blank">
+          <i class="icon-linkedin-squared small"></i>
+        </a>
         <a href="mailto:sdquah88@gmail.com">sdquah88@gmail.com</a>
       </div>
     </div>

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Touch devices triggering CSS :hover pseudoclass"
-date: 2018-04-11
+date: 2018-04-15
 ---
 
 ### Given
