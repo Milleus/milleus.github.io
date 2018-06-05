@@ -1,4 +1,4 @@
-var API_KEY = 'AIzaSyBpI_JymH-mU-Xg26h90FPF36V1XlSISdY';
+var API_KEY = 'AIzaSyBM9kY1PozcEOCGfg9QEMKOv-zEBraY1oA';
 var API_URL = 'https://www.googleapis.com/pagespeedonline/v4/runPagespeed?';
 var DOMAIN_LIST = [
   // ministries (16)
