@@ -1,5 +1,5 @@
 // spells on global cooldown
-const words = ['software engineer.', 'learner.', 'tech enthusiast.', 'gamer.'];
+const words = ['software developer.', 'learner.', 'tech enthusiast.', 'gamer.'];
 let idx = 0;
 let str = '';
 
