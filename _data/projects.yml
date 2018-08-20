@@ -31,8 +31,8 @@
     name: View repository
     path: https://github.com/Milleus/rebecca
   description:
-    main: Rebecca gives you access to another user's mac PC. This wasn't made to solve problems, but rather just to have fun :).
-    sub: Running this script injects ssh key into the victim's mac PC thus giving remote access.
+    main: Rebecca gives you access to another user's Mac. This could be modified to easily get SSH access to servers, but its current use is really just to troll people.
+    sub: Running this script injects ssh key into the victim's Mac thus giving remote access.
 
 - title: Calorie Calc
   image_path: /static/img/512-calorie-calculator.png
