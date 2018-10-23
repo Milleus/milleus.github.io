@@ -8,4 +8,4 @@ Dilbert by Scott Adams is pretty fucking amazing! So much so that I configured I
 
 ![alt text](/static/img/posts/no-metric-has-beaten-me-yet.jpg "No metric has beaten me yet")
 
-If you're interested in hooking up your IFTTT with comics, check out [www.comicsrss.com](https://www.comicsrss.com/){:target="_blank"} for a ton of RSS links.
+If you're interested in hooking up your IFTTT with comics, check out [www.comicsrss.com](https://www.comicsrss.com/){:target="\_blank"} for a ton of RSS links.

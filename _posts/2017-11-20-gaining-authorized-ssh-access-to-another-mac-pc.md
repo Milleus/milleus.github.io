@@ -17,9 +17,10 @@ You return to do your work only to find that something feels terribly wrong abou
 By the way, if you haven't figured out, Rebecca goes by another name called Complacency. I've also named my script after her so that we don't forget her.
 
 So how exactly does the script work? There are a couple of things that happen when the script is used.
+
 1. Injecting your rsa public key into the authorized_keys of the victim's mac PC
 2. Grabs the victim's hostname and IP address and sends it to an email address
 
-So with everything in place, all that's left to do is to SSH in and play around with some commands. For a more detailed explanation, [click here](https://github.com/Milleus/rebecca){:target="_blank"}.
+So with everything in place, all that's left to do is to SSH in and play around with some commands. For a more detailed explanation, [click here](https://github.com/Milleus/rebecca){:target="\_blank"}.
 
-I guess the key takeaway from this is to always be vigilant. There is just too much shit that someone can do to you especially if they have malicious intent. So remember, the next time you decide to go number one, don't give in to Rebecca. She is out there to f*ck with you.
+I guess the key takeaway from this is to always be vigilant. There is just too much shit that someone can do to you especially if they have malicious intent. So remember, the next time you decide to go number one, don't give in to Rebecca. She is out there to f\*ck with you.
