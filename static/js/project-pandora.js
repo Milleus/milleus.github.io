@@ -1,23 +1,23 @@
-var API_KEY = 'AIzaSyBM9kY1PozcEOCGfg9QEMKOv-zEBraY1oA';
-var API_URL = 'https://www.googleapis.com/pagespeedonline/v4/runPagespeed?';
+var API_KEY = "AIzaSyDi4TsRcmNyX_sogNOV8Fea-v5rBygVlTE";
+var API_URL = "https://www.googleapis.com/pagespeedonline/v4/runPagespeed?";
 var DOMAIN_LIST = [
   // ministries (16)
-  'mci.gov.sg',
-  'mccy.gov.sg',
-  'mindef.gov.sg',
-  'moe.gov.sg',
-  'mof.gov.sg',
-  'mfa.gov.sg',
-  'moh.gov.sg',
-  'mha.gov.sg',
-  'mlaw.gov.sg',
-  'mom.gov.sg',
-  'mnd.gov.sg',
-  'msf.gov.sg',
-  'mewr.gov.sg',
-  'mti.gov.sg',
-  'mot.gov.sg',
-  'pmo.gov.sg',
+  "mci.gov.sg",
+  "mccy.gov.sg",
+  "mindef.gov.sg",
+  "moe.gov.sg",
+  "mof.gov.sg",
+  "mfa.gov.sg",
+  "moh.gov.sg",
+  "mha.gov.sg",
+  "mlaw.gov.sg",
+  "mom.gov.sg",
+  "mnd.gov.sg",
+  "msf.gov.sg",
+  "mewr.gov.sg",
+  "mti.gov.sg",
+  "mot.gov.sg",
+  "pmo.gov.sg"
   // statutory boards (63)
   // 'acra.gov.sg',
   // 'a-star.edu.sg',
@@ -107,19 +107,19 @@ function runPagespeed() {
 
 function generateScript() {
   if (idx < DOMAIN_LIST.length) {
-    var s = document.createElement('script');
-    s.type = 'text/javascript';
+    var s = document.createElement("script");
+    s.type = "text/javascript";
     s.async = true;
     var query = [
-      'url=http://www.' + DOMAIN_LIST[idx],
-      'callback=runPagespeedCallbacks',
-      'key=' + API_KEY,
-    ].join('&');
+      "url=http://www." + DOMAIN_LIST[idx],
+      "callback=runPagespeedCallbacks",
+      "key=" + API_KEY
+    ].join("&");
 
     s.src = API_URL + query;
     document.head.insertBefore(s, null);
 
-    console.log('Request:', DOMAIN_LIST[idx], ', Timestamp:', new Date());
+    console.log("Request:", DOMAIN_LIST[idx], ", Timestamp:", new Date());
     idx++;
     // 60 requests per 100 seconds per user, throttle requests when necessary
     // setTimeout(generateScript, 2000);
@@ -131,8 +131,8 @@ function runPagespeedCallbacks(result) {
   if (result.error) {
     var errors = result.error.errors;
     for (var i = 0, len = errors.length; i < len; ++i) {
-      if (errors[i].reason == 'badRequest' && API_KEY == 'yourAPIKey') {
-        alert('Please specify your Google API key in the API_KEY variable.');
+      if (errors[i].reason == "badRequest" && API_KEY == "yourAPIKey") {
+        alert("Please specify your Google API key in the API_KEY variable.");
       } else {
         console.log(errors[i].message);
       }
@@ -142,7 +142,7 @@ function runPagespeedCallbacks(result) {
 
   for (var fn in callbacks) {
     var f = callbacks[fn];
-    if (typeof f == 'function') {
+    if (typeof f == "function") {
       callbacks[fn](result);
     }
   }
@@ -150,9 +150,9 @@ function runPagespeedCallbacks(result) {
 
 setTimeout(runPagespeed, 0);
 
-callbacks.displayLoadingExperience = function (result) {
+callbacks.displayLoadingExperience = function(result) {
   var overallSpeed = result.loadingExperience.overall_category;
-  var li = document.createElement('li');
+  var li = document.createElement("li");
   li.innerHTML = `
   <div class="collapsible-header display-flex align-items-center justify-content-space-between">
     <div class="display-flex align-items-center item-left break-word">
@@ -196,38 +196,48 @@ callbacks.displayLoadingExperience = function (result) {
     </div>
   </div>`;
 
-  var collapsible = document.querySelector('.collapsible');
+  var collapsible = document.querySelector(".collapsible");
   collapsible.appendChild(li);
 
   affectedArr.sort(sortByAffected);
-  setRecByAffected('#recommendations-by-affected');
+  setRecByAffected("#recommendations-by-affected");
   impactArr.sort(sortByImpact);
-  setRecByImpact('#recommendations-by-impact');
-  console.log('Adding Site:', result.id);
+  setRecByImpact("#recommendations-by-impact");
+  console.log("Adding Site:", result.id);
 
   siteCount++;
-  var queryStatus = document.querySelector('#query-status');
-  queryStatus.innerHTML = `Loading... ${siteCount} of ${DOMAIN_LIST.length} successfully added.`;
-}
+  var queryStatus = document.querySelector("#query-status");
+  queryStatus.innerHTML = `Loading... ${siteCount} of ${
+    DOMAIN_LIST.length
+  } successfully added.`;
+};
 
 function getSiteInfo(result) {
   var siteUrl = result.id;
   var siteTitle = result.title;
-  return `${siteUrl}<br>${siteTitle}`
+  return `${siteUrl}<br>${siteTitle}`;
 }
 
 function getLoadingExperience(result) {
   var speedScore = result.loadingExperience.overall_category;
   var metrics = result.loadingExperience.metrics;
-  var medianDcl = metrics && metrics.DOM_CONTENT_LOADED_EVENT_FIRED_MS ? formatSeconds(metrics.DOM_CONTENT_LOADED_EVENT_FIRED_MS.median) : 'NA';
-  var medianFcp = metrics && metrics.FIRST_CONTENTFUL_PAINT_MS ? formatSeconds(metrics.FIRST_CONTENTFUL_PAINT_MS.median) : 'NA';
+  var medianDcl =
+    metrics && metrics.DOM_CONTENT_LOADED_EVENT_FIRED_MS
+      ? formatSeconds(metrics.DOM_CONTENT_LOADED_EVENT_FIRED_MS.median)
+      : "NA";
+  var medianFcp =
+    metrics && metrics.FIRST_CONTENTFUL_PAINT_MS
+      ? formatSeconds(metrics.FIRST_CONTENTFUL_PAINT_MS.median)
+      : "NA";
   return `Overall: <strong class="${speedScore}">${speedScore}</strong><br>First Contentful Paint: ${medianFcp}<br>DOM Content Loaded: ${medianDcl}`;
 }
 
 function getResponseBytes(result) {
   var htmlResponseBytes = formatBytes(result.pageStats.htmlResponseBytes);
   var cssResponseBytes = formatBytes(result.pageStats.cssResponseBytes);
-  var javascriptResponseBytes = formatBytes(result.pageStats.javascriptResponseBytes);
+  var javascriptResponseBytes = formatBytes(
+    result.pageStats.javascriptResponseBytes
+  );
   var imageResponseBytes = formatBytes(result.pageStats.imageResponseBytes);
 
   return `HTML: ${htmlResponseBytes}<br>
@@ -262,7 +272,7 @@ function getRecommendations(result) {
       localizedRuleName: ruleResults[i].localizedRuleName,
       impact: ruleResults[i].ruleImpact
     });
-  };
+  }
 
   recommendations.sort(sortByImpact);
   if (recommendations[0]) {
@@ -273,9 +283,11 @@ function getRecommendations(result) {
     });
   }
 
-  var recommendationString = '';
+  var recommendationString = "";
   for (var i in recommendations) {
-    recommendationString += `<li>${recommendations[i].localizedRuleName} (Impact: ${recommendations[i].impact.toFixed(2)})</li>`;
+    recommendationString += `<li>${
+      recommendations[i].localizedRuleName
+    } (Impact: ${recommendations[i].impact.toFixed(2)})</li>`;
   }
   return recommendationString;
 }
@@ -289,9 +301,9 @@ function getOptimized(result) {
     }
 
     optimized.push(ruleResults[i].localizedRuleName);
-  };
+  }
 
-  var optimizedString = '';
+  var optimizedString = "";
   for (var i in optimized) {
     optimizedString += `<li>${optimized[i]}</li>`;
   }
@@ -320,11 +332,13 @@ function tabulateAffected(rule) {
 
 function setRecByAffected(selector) {
   var selected = document.querySelector(selector);
-  var appendString = '';
+  var appendString = "";
 
-  affectedArr.forEach(function (value, idx) {
+  affectedArr.forEach(function(value, idx) {
     if (idx < 5) {
-      appendString += `<li><strong>${affectedArr[idx].localizedRuleName} (Affected: ${affectedArr[idx].affected})</strong></li>`;
+      appendString += `<li><strong>${
+        affectedArr[idx].localizedRuleName
+      } (Affected: ${affectedArr[idx].affected})</strong></li>`;
     }
   });
 
@@ -333,20 +347,26 @@ function setRecByAffected(selector) {
 
 function setRecByImpact(selector) {
   var selected = document.querySelector(selector);
-  var appendString = '';
+  var appendString = "";
 
-  impactArr.forEach(function (value, idx) {
+  impactArr.forEach(function(value, idx) {
     if (idx < 5) {
-      appendString += `<li><strong>${impactArr[idx].localizedRuleName} (Impact: ${impactArr[idx].impact.toFixed(2)})</strong><br>${impactArr[idx].siteName}</li>`;
+      appendString += `<li><strong>${
+        impactArr[idx].localizedRuleName
+      } (Impact: ${impactArr[idx].impact.toFixed(2)})</strong><br>${
+        impactArr[idx].siteName
+      }</li>`;
     }
   });
 
   selected.innerHTML = appendString;
 }
 
-window.addEventListener('load', function () {
-  var queryStatus = document.querySelector('#query-status');
-  queryStatus.innerHTML = `Queries have ended. ${siteCount} of ${DOMAIN_LIST.length} successfully added.`;
+window.addEventListener("load", function() {
+  var queryStatus = document.querySelector("#query-status");
+  queryStatus.innerHTML = `Queries have ended. ${siteCount} of ${
+    DOMAIN_LIST.length
+  } successfully added.`;
 });
 
 function sortByImpact(a, b) {
@@ -362,4 +382,11 @@ function formatSeconds(ms) {
   return `${seconds.toFixed(2)}s`;
 }
 
-function formatBytes(a, b) { if (0 == a) return "0 Bytes"; var c = 1024, d = b || 2, e = ["Bytes", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB"], f = Math.floor(Math.log(a) / Math.log(c)); return parseFloat((a / Math.pow(c, f)).toFixed(d)) + " " + e[f] }
+function formatBytes(a, b) {
+  if (0 == a) return "0 Bytes";
+  var c = 1024,
+    d = b || 2,
+    e = ["Bytes", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB"],
+    f = Math.floor(Math.log(a) / Math.log(c));
+  return parseFloat((a / Math.pow(c, f)).toFixed(d)) + " " + e[f];
+}
