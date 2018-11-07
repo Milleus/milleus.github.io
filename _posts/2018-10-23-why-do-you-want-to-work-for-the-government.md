@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Why do you want to work for the government?"
+title: "Why do you want to work for the government"
 date: 2018-10-23
 ---
 
