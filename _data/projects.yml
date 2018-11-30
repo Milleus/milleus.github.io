@@ -1,3 +1,12 @@
+- title: Scylla
+  image_path: /static/img/512-scylla.png
+  href:
+    name: View data
+    path: https://github.com/Milleus/scylla/tree/master/data
+  description:
+    main: Scylla retrieves a list of mobile application information from App Store and Google Play for further analysis.
+    sub: Information from App Store is through use of App Store search API, information from Google Play is from web crawler.
+
 - title: Pandora
   image_path: /static/img/512-pandora.png
   href:
