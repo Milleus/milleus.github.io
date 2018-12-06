@@ -4,8 +4,8 @@
     name: View repository
     path: https://github.com/Milleus/scylla
   description:
-    main: Scylla retrieves a list of mobile application information from App Store and Google Play for further analysis.
-    sub: Information from App Store is through use of App Store search API, information from Google Play is from web crawler.
+    main: Scylla retrieves a list of mobile application information from App Store and Play Store for further analysis.
+    sub: Information from App Store is through use of their search API, information from Play Store is crawling their website.
 
 - title: Pandora
   image_path: /static/img/512-pandora.png
