@@ -42,21 +42,3 @@
   description:
     main: Rebecca gives you access to another user's Mac. This could be modified to easily get SSH access to servers, but its current use is really just to troll people.
     sub: Running this script injects ssh key into the victim's Mac thus giving remote access.
-
-- title: Calorie Calc
-  image_path: /static/img/512-calorie-calculator.png
-  href:
-    name: View site
-    path: http://calculator.yolofood.com.sg/
-  description:
-    main: A calorie calculator that recommends target meal plans based on user information such as age, height, weight, gender and activity level. It aims to help users lose weight through weekly planned meals.
-    sub: This was built with Laravel framework.
-
-- title: YOLO FOOD
-  image_path: /static/img/512-yolofood.png
-  href:
-    name: View site
-    path: http://yolofood.com.sg/
-  description:
-    main: A simple content management website for a restaurant that believes in serving healthy food that tastes good.
-    sub: This was built from scratch; hosting, setting up content management system, responsive design, and making it easily customizable.

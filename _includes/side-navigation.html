@@ -1,18 +1,27 @@
 <ul id="slide-out" class="side-nav fixed">
   <li>
     <div class="user-view dark-side">
-      <img class="circle" src="/static/img/dave-quah.jpg" alt="Dave Quah">
+      <img class="circle" src="/static/img/dave-quah.jpg" alt="Dave Quah" />
       <span class="name">Dave Quah</span>
-      <a href="mailto:{{ site.email }}"><span class="email">{{ site.email }}</span></a>
+      <a href="mailto:{{ site.email }}"
+        ><span class="email">{{ site.email }}</span></a
+      >
     </div>
   </li>
   <li><a class="waves-effect" href="/#home">Home</a></li>
   <li><a class="waves-effect" href="/#about">About</a></li>
   <li><a class="waves-effect" href="/#projects">Projects</a></li>
   <li><a class="waves-effect" href="/#contact">Contact</a></li>
-  <li><a class="waves-effect" href="/blog">Blog</a></li>
-  <li><a class="waves-effect" href="{{ site.github }}" target="_blank">Github Repository</a></li>
-
+  <li>
+    <a class="waves-effect" href="{{ site.github }}" target="_blank"
+      >Github Repository</a
+    >
+  </li>
 </ul>
 
-<a href="#" data-activates="slide-out" class="button-collapse hide-on-large-only"><i class="material-icons medium">menu</i></a>
+<a
+  href="#"
+  data-activates="slide-out"
+  class="button-collapse hide-on-large-only"
+  ><i class="material-icons medium">menu</i></a
+>
