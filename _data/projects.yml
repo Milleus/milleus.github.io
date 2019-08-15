@@ -1,3 +1,11 @@
+- title: Loaders
+  image_path: /static/img/512-loaders.gif
+  href:
+    name: View demo
+    path: https://codepen.io/Milleus/
+  description:
+    main: I was spending time exploring CSS animations.
+    sub: These are some of the loaders I've made.
 - title: Calliope
   image_path: /static/img/512-calliope.png
   href:
