@@ -1,11 +1,3 @@
-- title: Loaders
-  image_path: /static/img/512-loaders.gif
-  href:
-    name: View demo
-    path: https://codepen.io/Milleus/
-  description:
-    main: I was spending time exploring CSS animations.
-    sub: These are some of the loaders I've made.
 - title: Calliope
   image_path: /static/img/512-calliope.png
   href:
@@ -14,15 +6,6 @@
   description:
     main: Calliope retrieves a list of mobile application information from App Store and Play Store for further analysis.
     sub: Information from App Store is through use of their search API, information from Play Store is crawling their website.
-
-- title: Pandora
-  image_path: /static/img/512-pandora.png
-  href:
-    name: View demo
-    path: /projects/pandora
-  description:
-    main: Pandora analyses speed performance of Singapore government websites and provide recommendations for improvement.
-    sub: There is no backend as this purely utilizes Google Pagespeed API. Do take note that it will take some time for queries to return.
 
 - title: Tessara
   image_path: /static/img/512-tessara.gif
