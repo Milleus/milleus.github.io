@@ -25,15 +25,13 @@ section .line{background-color:red;height:3px;margin:10px 0;width:20px;}
 #slide-out li > a{color:#f2f2f2;text-decoration:none;}
 #home{align-items:center;flex-direction:column;justify-content:center;height:100vh;min-height:400px;}
 #home .caption{font-size:28px;font-weight:200;display:flex;margin:0;-webkit-font-smoothing:subpixel-antialiased;}
-#home #typity{animation:blink-caret .75s step-end infinite;background:transparent;background-size:200% 100%;border-right:2px solid black;position:relative;transition:background-position .4s;}
-#home #typity.highlighted{background-image:-webkit-linear-gradient(right, rgba(0,0,0,0.2) 50%, transparent 50%);background-image:linear-gradient(to left, rgba(0,0,0,0.2) 50%, transparent 50%);background-position:100% 0;border-right:none;}
-#home #typity:after{background-color:red;bottom:3px;content:"";height:3px;left:0;position:absolute;width:100%;}
-@keyframes blink-caret{from, to{border-color:transparent}
-50%{border-color:black;}
-}
+#home .typity {border-bottom:3px solid red;padding-right:2px;position:relative;transition:background-position .4s;white-space:nowrap;}
+#home .typity::after {animation:blink-cursor .75s step-end infinite;background-color:transparent;content:"";display:block;height:100%;position:absolute;right:0;top:0;width:2px;}
+#home .typity.highlight{background-image:linear-gradient(to left, rgba(0, 0, 0, 0.2) 50%, transparent 50%);background-position:100%;background-size:200% 100%;}
+#home .typity.highlight::after{animation:none;}
+@keyframes blink-cursor{0%{background-color:transparent;}50%{background-color:black;}}
 #contact .icon-link{text-decoration:none;}
+#contact .icon-link i:first-child::before {margin-left: 0;}
 #post .highlighter-rouge{background-color:#400101;border-radius:3px;color:#f2f2f2;font-size:12px;padding:1px 5px;vertical-align:middle;}
 #post img{width:100%;}
-@media only screen and (max-width:992px){header, main, footer{padding-left:0;}
-#home{height:calc(100vh - 62px);}
-}
+@media only screen and (max-width:992px){header, main, footer{padding-left:0;}#home{height:calc(100vh - 62px);}}

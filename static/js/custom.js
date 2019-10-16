@@ -1,42 +1,35 @@
 // spells on global cooldown
-const words = ['software developer.', 'learner.', 'tech enthusiast.', 'gamer.'];
+const words = ['software engineer.', 'frontend enthusiast.', 'tech enthusiast.', 'Singaporean.'];
+const element = document.querySelector(".typity");
 let idx = 0;
-let str = '';
+let typed = "";
 
-// type/wipe
-if ($('#typity').length != 0) {
-  startType(words[idx], 0);
-}
-
-function startType(word, charIdx) {
-  if (charIdx < word.length) {
-    str += word.charAt(charIdx);
-    $('#typity').html(str);
-    charIdx++;
-    setTimeout(function () {
-      startType(word, charIdx);
+function startType(pun, index) {
+  if (index < pun.length) {
+    typed += pun.charAt(index);
+    element.innerHTML = typed;
+    index++;
+    setTimeout(function() {
+      startType(pun, index);
     }, 50);
   } else {
-    startWipe();
-    str = '';
+    setTimeout(function() {
+      element.classList.add("highlight");
+    }, 1000);
+
+    setTimeout(function() {
+      element.classList.remove("highlight");
+      typed = "";
+      element.innerHTML = typed;
+
+      idx = idx < words.length - 1 ? idx + 1 : 0;
+      startType(words[idx], 0);
+    }, 2000);
   }
 }
 
-function startWipe() {
-  idx = idx < words.length - 1 ? idx + 1 : 0;
+startType(words[0], 0);
 
-  setTimeout(function () {
-    $('#typity').addClass('highlighted')
-  }, 1000);
-
-  setTimeout(function () {
-    $('#typity').removeClass('highlighted').text('');
-  }, 2000);
-
-  setTimeout(function () {
-    startType(words[idx], 0);
-  }, 2000);
-}
 
 // side navigation
 $(".button-collapse").sideNav({

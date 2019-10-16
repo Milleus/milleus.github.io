@@ -21,10 +21,6 @@ description: >- # this means to ignore newlines until "baseurl:"
   We build amazing products to help our citizens.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-facebook: https://www.facebook.com/milleus
-github: https://github.com/Milleus
-linkedin: https://www.linkedin.com/in/milleus
-twitter: https://twitter.com/Milleus
 
 # Build settings
 markdown: kramdown
@@ -44,3 +40,11 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+
+codepen: https://codepen.io/Milleus
+github: https://github.com/Milleus
+
+facebook: https://www.facebook.com/milleus
+linkedin: https://www.linkedin.com/in/milleus
+twitter: https://twitter.com/Milleus
