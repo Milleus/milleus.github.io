@@ -5,7 +5,9 @@
         <h3 class="header">My Projects</h3>
         <p>
           Check out my
-          <a href="{{ site.codepen }}" target="_blank">Codepen</a>
+          <a href="{{ site.codepen }}" rel="noopener noreferrer" target="_blank"
+            >Codepen</a
+          >
           for the fun stuff!
         </p>
       </div>
@@ -15,7 +17,11 @@
       <div class="col m6">
         <div class="card">
           <div class="card-image waves-effect waves-block waves-light">
-            <img class="activator" src="{{ project.image_path }}" />
+            <img
+              class="activator"
+              src="{{ project.image_path }}"
+              alt="Image of project"
+            />
           </div>
           <div class="card-content">
             <span class="card-title activator grey-text text-darken-4">
@@ -23,7 +29,11 @@
               <i class="material-icons right">more_vert</i>
             </span>
             <p>
-              <a href="{{ project.href.path }}" target="_blank">
+              <a
+                href="{{ project.href.path }}"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
                 {{ project.href.name }}
               </a>
             </p>
