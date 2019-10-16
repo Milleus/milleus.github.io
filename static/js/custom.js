@@ -1,51 +1,69 @@
-// spells on global cooldown
-const words = ['software engineer.', 'frontend enthusiast.', 'tech enthusiast.', 'Singaporean.'];
-const element = document.querySelector(".typity");
+// typing effect
+const words = [
+  "software engineer.",
+  "frontend enthusiast.",
+  "tech enthusiast.",
+  "Singaporean."
+];
+const typeEl = document.querySelector(".typity");
 let idx = 0;
 let typed = "";
 
-function startType(pun, index) {
+const startType = (pun, index) => {
   if (index < pun.length) {
     typed += pun.charAt(index);
-    element.innerHTML = typed;
+    typeEl.innerHTML = typed;
     index++;
-    setTimeout(function() {
+    setTimeout(() => {
       startType(pun, index);
     }, 50);
   } else {
-    setTimeout(function() {
-      element.classList.add("highlight");
+    setTimeout(() => {
+      typeEl.classList.add("highlight");
     }, 1000);
 
-    setTimeout(function() {
-      element.classList.remove("highlight");
+    setTimeout(() => {
+      typeEl.classList.remove("highlight");
       typed = "";
-      element.innerHTML = typed;
+      typeEl.innerHTML = typed;
 
       idx = idx < words.length - 1 ? idx + 1 : 0;
       startType(words[idx], 0);
     }, 2000);
   }
-}
+};
 
 startType(words[0], 0);
 
+// side navigation init
+const sideNavEls = document.querySelectorAll(".sidenav");
+M.Sidenav.init(sideNavEls, { closeOnClick: true, draggable: true });
 
-// side navigation
-$(".button-collapse").sideNav({
-  closeOnClick: true,
-  draggable: true
-});
+// scroll effect
+const handleNavItemClick = e => {
+  const distanceToTop = el => Math.floor(el.getBoundingClientRect().top);
 
-// Initialize collapsible (uncomment the line below if you use the dropdown variation)
-//$('.collapsible').collapsible();
-
-// anchor scroll
-$('#slide-out > li > a[href*="#"]').on('click', function () {
-  if (location.pathname == '/') {
-    const href = $(this).attr('href').replace(/[\/]+/g, '');
-    $('html, body').animate({
-      scrollTop: $(href).offset().top
-    }, 1000);
+  e.preventDefault();
+  const targetId = e.currentTarget.getAttribute("href");
+  const targetEl = document.querySelector(targetId);
+  if (!targetEl) {
+    return;
   }
+
+  const originalTop = distanceToTop(targetEl);
+  window.scrollBy({ top: originalTop, left: 0, behavior: "smooth" });
+
+  const checkIfDone = setInterval(() => {
+    const atBottom =
+      window.innerHeight + window.pageYOffset >= document.body.offsetHeight - 2;
+    if (distanceToTop(targetEl) === 0 || atBottom) {
+      window.history.pushState("", "", targetId);
+      clearInterval(checkIfDone);
+    }
+  }, 1000);
+};
+
+const navItems = document.querySelectorAll('#slide-out > li > a[href*="#"]');
+navItems.forEach(navItem => {
+  navItem.onclick = handleNavItemClick;
 });

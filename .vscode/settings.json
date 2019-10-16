@@ -1,0 +1,10 @@
+{
+  "editor.detectIndentation": false,
+  "editor.formatOnSave": true,
+  "editor.insertSpaces": true,
+  "editor.tabSize": 2,
+  "eslint.autoFixOnSave": true,
+  "eslint.enable": true,
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true
+}
