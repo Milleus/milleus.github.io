@@ -1,23 +1,46 @@
 # Welcome to Jekyll!
 #
 # This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely need to edit after that.
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
 # For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
 title: Dave Quah
 email: quahdave@gmail.com
-description: > # this means to ignore newlines until "url:"
+description: >- # this means to ignore newlines until "baseurl:"
   I'm a Dave-loper (pun intended) in Government Technology Agency of Singapore,
   and am part of the Digital Design and Development Team (DCUBE).
   We build amazing products to help our citizens.
-url: "/" # the base hostname & protocol for your site
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
 facebook: https://www.facebook.com/milleus
-googleplus: https://plus.google.com/u/1/111152598083769319838
-linkedin: https://www.linkedin.com/in/milleus
 github: https://github.com/Milleus
+linkedin: https://www.linkedin.com/in/milleus
+twitter: https://twitter.com/Milleus
 
 # Build settings
 markdown: kramdown
 permalink: /blog/:year/:month/:day/:title
+# theme: minima
+plugins:
+  - jekyll-feed
+
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
+# exclude:
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
