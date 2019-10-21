@@ -1,0 +1,20 @@
+{
+  "short_name": "Dave Quah",
+  "name": "Dave Quah Website",
+  "display": "minimal-ui",
+  "background_color": "#400101",
+  "theme_color": "#590202",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "/static/favicon/android-icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/static/favicon/android-icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
