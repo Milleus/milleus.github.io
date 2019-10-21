@@ -37,7 +37,7 @@ startType(words[0], 0);
 
 // side navigation init
 const sideNavEls = document.querySelectorAll(".sidenav");
-M.Sidenav.init(sideNavEls, { closeOnClick: true, draggable: true });
+M.Sidenav.init(sideNavEls, { draggable: true });
 
 // scroll effect
 const handleNavItemClick = e => {

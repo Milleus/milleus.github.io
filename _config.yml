@@ -16,9 +16,7 @@
 title: Dave Quah
 email: quahdave@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  I'm a Dave-loper (pun intended) in Government Technology Agency of Singapore,
-  and am part of the Digital Design and Development Team (DCUBE).
-  We build amazing products to help our citizens.
+  I'm a Dave-loper (pun intended) engineering digital government and making lives better at GDS Hive, GovTech Singapore.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
