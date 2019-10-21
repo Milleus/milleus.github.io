@@ -3,7 +3,7 @@ const words = [
   "software engineer.",
   "frontend enthusiast.",
   "tech enthusiast.",
-  "Singaporean."
+  "Singapore citizen."
 ];
 const typeEl = document.querySelector(".typity");
 let idx = 0;
@@ -29,7 +29,7 @@ const startType = (pun, index) => {
 
       idx = idx < words.length - 1 ? idx + 1 : 0;
       startType(words[idx], 0);
-    }, 2000);
+    }, 2500);
   }
 };
 
