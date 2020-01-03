@@ -4,8 +4,8 @@
     name: View repository
     path: https://github.com/Milleus/calliope
   description:
-    main: Calliope retrieves a list of mobile application information from App Store and Play Store for further analysis.
-    sub: Information from App Store is through use of their search API, information from Play Store is crawling their website.
+    main: Calliope crawls and retrieves Singapore Government mobile applications data from both App Store and Play Store.
+    sub: Written in Python, this is a quick prototype on data consolidation.
 
 - title: Tessara
   image_path: /static/img/512-tessara.gif
