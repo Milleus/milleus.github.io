@@ -1,5 +1,5 @@
 // typing effect
-const words = ["software engineer.", "frontend enthusiast.", "gamer."];
+const words = ["software engineer.", "front-end enthusiast.", "gamer."];
 const typeEl = document.querySelector(".typity");
 let idx = 0;
 let typed = "";
