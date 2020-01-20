@@ -1,3 +1,12 @@
+- title: Euterpe
+  image_path: /static/img/512-euterpe.png
+  href:
+    name: View repository
+    path: https://github.com/Milleus/euterpe
+  description:
+    main: Euterpe is a web crawler that searches a website for internal and external broken links.
+    sub: Crawler is written in Python. Demo dashboard was bootstrapped with Create React App.
+
 - title: Calliope
   image_path: /static/img/512-calliope.png
   href:
@@ -13,17 +22,8 @@
     name: View repository
     path: https://github.com/Milleus/tessara
   description:
-    main: Tessara records Telegram chat messages and store in Google Sheets. This utilizes Google Apps Script for web app hosting and Google CacheService for session management.
+    main: Tessara records Telegram chat messages and store in Google Sheets.
     sub: This utilizes Google Apps Script for wep app hosting and Google CacheService for session management.
-
-- title: Melissa
-  image_path: /static/img/512-melissa.gif
-  href:
-    name: View demo
-    path: /projects/melissa
-  description:
-    main: Melissa recommends a nearby place to eat based on location. It aims to solve the daily problem of deciding where to eat.
-    sub: There is no backend as this purely utilizes Google Maps API.
 
 - title: Rebecca
   image_path: /static/img/512-rebecca.png
