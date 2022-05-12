@@ -1,6 +1,6 @@
 <script lang="ts">
   export let href: string;
-  export let target: "_blank" = undefined;
+  export let target: "_self" | "_blank" = "_blank";
 </script>
 
 <a class="link" data-type="primary" {href} {target}>

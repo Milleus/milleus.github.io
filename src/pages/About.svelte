@@ -21,11 +21,10 @@
     </p>
     <p>
       I'm currently working at
-      <Link href="https://www.hive.tech.gov.sg/" target="_blank">GDS Hive</Link>
-      which is part of
-      <Link href="https://www.tech.gov.sg/" target="_blank">GovTech</Link>
-      where we're engineering digital government and making lives better. Some of
-      the projects that I've been involved in are:
+      <Link href="https://www.hive.tech.gov.sg/">GDS Hive</Link> which is part of
+      <Link href="https://www.tech.gov.sg/">GovTech</Link> where we're engineering
+      digital government and making lives better. Some of the projects that I've
+      been involved in are:
     </p>
     <ul>
       <li>Immigrations and Checkpoints Authority (ICA) e-Services</li>
@@ -36,11 +35,9 @@
     </ul>
     <p>
       I'm currently learning more about
-      <Link href="https://cube.fyi/" target="_blank">CUBE CSS</Link>,
-      <Link href="https://svelte.dev/" target="_blank">Svelte</Link> and
-      <Link href="https://www.a11yproject.com/" target="_blank">
-        web accessibility</Link
-      >.
+      <Link href="https://cube.fyi/">CUBE CSS</Link>,
+      <Link href="https://svelte.dev/">Svelte</Link> and
+      <Link href="https://www.a11yproject.com/">web accessibility</Link>.
     </p>
   </main>
 

@@ -17,9 +17,7 @@
   <p>You can also find me at:</p>
   <ul class="flex">
     {#each socialLinks as link}
-      <li>
-        <Link href={link.href} target="_blank">{link.label}</Link>
-      </li>
+      <li><Link href={link.href}>{link.label}</Link></li>
     {/each}
   </ul>
   <p>&copy; {new Date().getFullYear()} Dave Quah</p>
