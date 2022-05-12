@@ -9,7 +9,7 @@
 
 <style>
   .link[data-type="primary"] {
-    color: var(--clr-red-600);
+    color: var(--clr-red-700);
     text-decoration: underline;
   }
 
